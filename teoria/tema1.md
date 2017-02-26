@@ -1,6 +1,6 @@
-# Ejercicio Tema 1 - Introducción
+# Tema 1 - Introducción
 
-__Buscar información sobre las tareas o servicios web para los que se usan más los siguientes programas__: 
+__1. Buscar información sobre las tareas o servicios web para los que se usan más los siguientes programas__: 
 
 * __apache__
 * __nginx__
