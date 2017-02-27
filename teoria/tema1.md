@@ -26,3 +26,15 @@ En [DigitalOcean](https://www.digitalocean.com/community/tutorials/apache-vs-ngi
 - __Fichero vs URI__: `apache` interpreta una petición como un recurso físico en el sistema. Por otro lado, al estar diseñado tanto para servidor web como para servidor proxy `nginx` trabaja principalmente con URIs.
 
 - __Módulos__: `apache` permite cargar y descargar de forma dinámica módulos mientras el servidor está ejecutándose. En cambio, en `nginx` los módulos no se pueden cargar de forma dinámica, lo que hace que `nginx` sea mucho menos flexible.
+
+## Thttpd
+
+## Cherokee
+
+## Node.js
+
+[Node.js](https://nodejs.org/en/about/) es un entorno _Javascript_ asíncrono orientado a eventos. Esto quiere decir que el servidor sólo reaccionará cuando un evento ocurra. Está diseñado para construir aplicaciones escalables y con requisitos de tiempo real, puede manejar múltiples conexiones a la vez. 
+
+Otros servidores usan hebras del sistema operativo, lo cual es muy ineficiente y difícil de usar. Además, prácticamente ninguna función de Node.js ejecuta I/O por lo que los procesos no se bloquean, esto permite hacer sistemas escalables. Para más información consultar la [documentación](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/).
+
+Además, Node.js funciona en Javascript, lo que nos permite usar el mismo lenguaje de programación tanto en el _frontend_ como en el _backend_.
