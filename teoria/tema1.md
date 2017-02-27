@@ -27,7 +27,15 @@ En [DigitalOcean](https://www.digitalocean.com/community/tutorials/apache-vs-ngi
 
 - __Módulos__: `apache` permite cargar y descargar de forma dinámica módulos mientras el servidor está ejecutándose. En cambio, en `nginx` los módulos no se pueden cargar de forma dinámica, lo que hace que `nginx` sea mucho menos flexible.
 
-## Thttpd
+## thttpd
+
+[thttpd](http://www.acme.com/software/thttpd/) es un servidor web libre desarrollado por [ACME Laboratories](http://acme.com/), compatible con la mayoría de sistemas _Unix_, que tiene como principales características:
+
+- __Simple__: solo utiliza lo mínimo posible para poder usar el protocolo HTTP.
+- __Ligero__: el número de archivos que necesita es muy reducido, con tamaños pequeños para estos ficheros y el ejecutable, poco uso de memoria durante la ejecución, etc. Para más información, podemos consultar este [enlace](http://www.acme.com/software/thttpd/benchmarks.html).
+- __Multiplataforma__: como se ha dicho antes, es posible ejecutarlo en una gran variedad de sistemas basados en Unix.
+- __Rápido__: ante un alto nivel de carga, responde mucho más rápido que otros sistemas.
+- __Seguridad__: desde ACME Labs., hacen todo lo posible para mantener la seguridad, frente a ataques al servidor, mejorando la seguridad de la herramienta.
 
 ## Cherokee
 
