@@ -39,6 +39,8 @@ En [DigitalOcean](https://www.digitalocean.com/community/tutorials/apache-vs-ngi
 
 ## Cherokee
 
+Es una herramienta que nos permite configurar fácilmente un servidor web, que nos permite instalar una gran cantidad de servicios, poder crear infraestructuras virtuales, soporta muchas herramientas web (FastCGI, SCGI, PHP, uWSGI, SSI, etc.), SSL/TLS, etc. También ofrece una interfaz gráfica para poder configurar el servidor web y poder ejecutar aplicaciones en Django, Ruby On Rails, videostreaming, etc.
+
 ## Node.js
 
 [Node.js](https://nodejs.org/en/about/) es un entorno _Javascript_ asíncrono orientado a eventos. Esto quiere decir que el servidor sólo reaccionará cuando un evento ocurra. Está diseñado para construir aplicaciones escalables y con requisitos de tiempo real, puede manejar múltiples conexiones a la vez. 
