@@ -1,0 +1,9 @@
+Component,Availability
+Web,0.85
+Application,0.9
+Database,0.999
+DNS,0.98
+Firewall,0.85
+Switch,0.99
+Datacenter,0.9999
+ISP,0.95
