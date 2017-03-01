@@ -11,4 +11,5 @@ Este repositorio ha sido realizado por
 ## Tareas
 Actualmente tenemos que
 
-- [ ] Hacer ejecicio tema 1.
+- [x] Hacer ejecicio tema 1.
+- [ ] Hacer ejercicios tema 2.
