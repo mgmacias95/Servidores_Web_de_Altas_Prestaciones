@@ -15,13 +15,14 @@ __1. Calcular la disponibilidad del sistema descrito en edgeblog.net si en cada 
 
 __2. Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2: https://github.com/Unitech/pm2 que sirve para administrar clústeres de NodeJS.__
 
-
+__supervisord__: supervisor universal para servidores hecho en Python (http://supervisord.org/introduction.html).
+__uWSGI__: para Django y Apache: https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/uwsgi/
 
 __3. ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas.__
 
 
 
-__4. Buscar diferentes tipos de productos:
+__4. Buscar diferentes tipos de productos:__
 
-* Buscar ejemplos de balanceadores software y hardware (productos comerciales).
-* Buscar productos comerciales para servidores de aplicaciones. (3) Buscar productos comerciales para servidores de almacenamiento.__
+* __Buscar ejemplos de balanceadores software y hardware (productos comerciales).__
+* __Buscar productos comerciales para servidores de aplicaciones. (3) Buscar productos comerciales para servidores de almacenamiento.__
