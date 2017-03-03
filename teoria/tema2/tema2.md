@@ -10,7 +10,7 @@ __1. Calcular la disponibilidad del sistema descrito en edgeblog.net si en cada 
 | DNS         |         0.98   |        0.9996   |        0.999992 |
 | Firewall    |         0.85   |        0.9775   |        0.996625 |
 | Switch      |         0.99   |        0.9999   |        0.999999 |
-| Datacenter  |         0.9999 |        1        |        1        |
+| Datacenter  |         0.9999 |        0.9999   |        0.9999   |
 | ISP         |         0.95   |        0.9975   |        0.999875 |
 
 __2. Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2: https://github.com/Unitech/pm2 que sirve para administrar clústeres de NodeJS.__
