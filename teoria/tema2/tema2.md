@@ -2,6 +2,8 @@
 
 __1. Calcular la disponibilidad del sistema descrito en edgeblog.net si en cada subsistema tenemos en total 3 elementos.__
 
+Hemos hecho un [script](https://github.com/mgmacias95/Servidores_Web_de_Altas_Prestaciones/blob/master/teoria/tema2/ej1.py) que lo calcula automáticamente.
+
 | Component   |   Availability |   Availability2 |   Availability3 |
 |:------------|---------------:|----------------:|----------------:|
 | Web         |         0.85   |        0.9775   |        0.996625 |
