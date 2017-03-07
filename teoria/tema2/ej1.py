@@ -2,6 +2,9 @@ import pandas as pd
 import sys
 from tabulate import tabulate
 
+# decimal precision
+pd.set_option('display.precision',15)
+
 add_one_rep = lambda x: x.ix[0] + (1 - x.ix[0]) * x.ix[1] if x.ix[2] else x.ix[1]
 
 if len(sys.argv) != 3:
@@ -18,9 +21,11 @@ availability_chart = pd.read_csv(file)
 for i in range(2,replicas+1):
     name = 'Availability'+str(i)
     last_name = 'Availability' if i==2 else 'Availability'+str(i-1)
-    availability_chart[name] = availability_chart[[last_name, 'Availability', 'Replicate']].apply(add_one_rep, axis=1)
-
+    availability_chart[name] = availability_chart[[last_name, 'Availability', \
+                              'Replicate']].apply(add_one_rep, axis=1).round(decimals=15
+)
 # remove replicate flag column
 del availability_chart['Replicate']
 
-print(tabulate(availability_chart, headers='keys', tablefmt='pipe', showindex=False))
+print(tabulate(availability_chart, headers='keys', tablefmt='pipe', 
+               showindex=False, floatfmt=".9f"))

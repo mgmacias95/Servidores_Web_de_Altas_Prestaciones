@@ -6,14 +6,14 @@ Hemos hecho un [script](https://github.com/mgmacias95/Servidores_Web_de_Altas_Pr
 
 | Component   |   Availability |   Availability2 |   Availability3 |
 |:------------|---------------:|----------------:|----------------:|
-| Web         |         0.85   |        0.9775   |        0.996625 |
-| Application |         0.9    |        0.99     |        0.999    |
-| Database    |         0.999  |        0.999999 |        1        |
-| DNS         |         0.98   |        0.9996   |        0.999992 |
-| Firewall    |         0.85   |        0.9775   |        0.996625 |
-| Switch      |         0.99   |        0.9999   |        0.999999 |
-| Datacenter  |         0.9999 |        0.9999   |        0.9999   |
-| ISP         |         0.95   |        0.9975   |        0.999875 |
+| Web         |    0.850000000 |     0.977500000 |     0.996625000 |
+| Application |    0.900000000 |     0.990000000 |     0.999000000 |
+| Database    |    0.999000000 |     0.999999000 |     0.999999999 |
+| DNS         |    0.980000000 |     0.999600000 |     0.999992000 |
+| Firewall    |    0.850000000 |     0.977500000 |     0.996625000 |
+| Switch      |    0.990000000 |     0.999900000 |     0.999999000 |
+| Datacenter  |    0.999900000 |     0.999900000 |     0.999900000 |
+| ISP         |    0.950000000 |     0.997500000 |     0.999875000 |
 
 __2. Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2: https://github.com/Unitech/pm2 que sirve para administrar clústeres de NodeJS.__
 
