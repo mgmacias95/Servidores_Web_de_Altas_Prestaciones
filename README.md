@@ -12,5 +12,5 @@ Este repositorio ha sido realizado por
 Actualmente tenemos que
 
 - [x] Hacer ejecicio tema 1.
-- [ ] Hacer ejercicios tema 2.
+- [x] Hacer ejercicios tema 2.
 - [ ] Hacer práctica 1
