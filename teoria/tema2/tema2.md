@@ -38,9 +38,18 @@ __4. Buscar diferentes tipos de productos:__
 * __Buscar productos comerciales para servidores de aplicaciones.__
 * __Buscar productos comerciales para servidores de almacenamiento.__
 
-- Balanceadores de carga software:
++ Balanceadores de carga software:
   - __[Enterprise VA MAX](https://www.loadbalancer.org/products/virtual/enterprise-va-max)__: balanceador de carga software de la empresa _loadbalencer.org_. Ofrece un balanceador de carga software, con capacidad para una alta escalabilidad del sistema, a cambio de una licencia de pago.
   - __[nginx](http://nginx.org/en/docs/http/load_balancing.html)__: nginx también permite actuar como un balanceador de carga HTTP. 
   - __[Pound](http://www.apsis.ch/pound)__: Pound es otro balanceador de carga software capaz de balancear una gran cantidad de nodos ante peticiones HTTP. Es gratuito y con licencia GPT. 
   - __[Pen](http://siag.nu/pen/)__: es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. 
+
 + Balanceadores de carga hardware:
+    - __[Barracuda](https://www.barracuda.com/solutions/physical)__: Barracuda ofrece balanceadores de carga hardware de alto rendimiento. Según su página oficial, ofrecen una fácil instalación, y además, estos dispositivos están conectados a _[Barracuda Cloud](https://www.barracuda.com/programs/cloud)_, para que, en caso de que la carga de trabajo sea muy grande, se haga el trabajo de balanceo de carga en el cloud.
+    - __[Kemp Technologies](https://kemptechnologies.com/server-load-balancing-appliances/product-matrix.html)__: ofrece una amplia gama de balanceadores de carga hardware, con capacidades para soportar velocidades desde los 1.7Gbps hasta los 30Gbps, capaces de soportar hasta 1000 servidores reales.
+
++ Servidores de aplicaciones:
+    - __[Oracle Application Server](https://kemptechnologies.com/server-load-balancing-appliances/product-matrix.html)__: Oracle ofrece todos los servicios necesarios para soportar aplicaciones (J2EE, Oracle Web Cache y HTTP Server...).
+    - __[Apache Tomcat](https://tomcat.apache.org/)__: Tomcat ofrece una implementación libre de Java Servlet, JavaServer Pages, Java WebSocket, etc. para poder crear un servidor de aplicaciones, tanto para Windows como para Linux.
+    - __[Windows Server](https://technet.microsoft.com/en-us/windowsserver/dd448610.aspx)__: Windows también ofrece una solución para crear servidores de aplicaciones, usando Windows Server y la tecnología de Microsoft .NET Framework. En la propia documentación, podemos encontrar un tutorial de cómo preparar y desplegar un servidor de aplicaciones.
+    - __[Microsoft Azure](https://azure.microsoft.com/en-us/overview/business-apps-on-azure/)__: de nuevo, Microsoft ofrece una solución a la hora de crear servidores de aplicaciones, usando tecnologías cloud con Microsoft Azure. Además, también ofrece una gran cantidad de aplicaciones listas para ser desplegadas, junto con soporte de empresas como IBM, Red Hat, etc. 
