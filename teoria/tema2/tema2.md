@@ -26,7 +26,11 @@ __2. Buscar frameworks y librerías para diferentes lenguajes que permitan hacer
 
 __3. ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas.__
 
+Usando una herramienta que monitorice cada servicio por separado. Algunos ejemplos de herramientas que permiten esto de forma sencilla son:
 
+* [__Munin__](munin-monitoring.org): presenta gráficos de carga de distintos servicios y componentes de un servidor. Podemos ver la información que ofrece en su [live demo](http://demo.munin-monitoring.org/munin-monitoring.org/buildd.munin-monitoring.org/).
+
+* [__Inciga__](https://www.icinga.com/): proporciona una interfaz gráfica para realizar tareas de monitorización y, además, tiene un histórico de problemas, notificaciones, problemas de servicios/aplicaciones y es extendible. Nació como un _fork_ de _Nagios_.
 
 __4. Buscar diferentes tipos de productos:__
 
