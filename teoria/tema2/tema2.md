@@ -15,8 +15,11 @@ __1. Calcular la disponibilidad del sistema descrito en edgeblog.net si en cada 
 
 __2. Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2: https://github.com/Unitech/pm2 que sirve para administrar clústeres de NodeJS.__
 
-__supervisord__: supervisor universal para servidores hecho en Python (http://supervisord.org/introduction.html).
-__uWSGI__: para Django y Apache: https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/uwsgi/
+* [__supervisord__](http://supervisord.org/introduction.html): supervisor universal para servidores hecho en Python.
+
+* [__uWSGI__](https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/uwsgi/): para Django y Apache.
+
+* [__Forever__](https://github.com/hefangshi/forever-cluster): `forever` es una utilidad de _Node.js_ para línea de comandos que asegura que una aplicación se ejecute de manera continua. También permite monitorizar la aplicación usando `forever-monitor`. Tiene una funcionalidad mucho más reducida que `pm2` y, por tanto, es menos popular.
 
 __3. ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas.__
 
