@@ -35,8 +35,8 @@ __4. Buscar diferentes tipos de productos:__
 * __Buscar productos comerciales para servidores de almacenamiento.__
 
 + Balanceadores de carga software:
-  - _Enterprise VA MAX_: balanceador de carga software de la empresa [loadbalencer.org](https://www.loadbalancer.org/products/virtual/enterprise-va-max). Ofrece un balanceador de carga software, con capacidad para una alta escalabilidad del sistema, a cambio de una licencia de pago.
-  - _nginx_: nginx también permite actuar como un balanceador de carga HTTP. Podemos encontrar más información en la [documentación oficial](http://nginx.org/en/docs/http/load_balancing.html).
+  - [Enterprise VA MAX]((https://www.loadbalancer.org/products/virtual/enterprise-va-max)): balanceador de carga software de la empresa _loadbalencer.org_. Ofrece un balanceador de carga software, con capacidad para una alta escalabilidad del sistema, a cambio de una licencia de pago.
+  - [nginx](http://nginx.org/en/docs/http/load_balancing.html): nginx también permite actuar como un balanceador de carga HTTP. 
   - _Pound_: Pound es otro balanceador de carga software capaz de balancear una gran cantidad de nodos ante peticiones HTTP. Es gratuito y con licencia GPT. Para más información, ver la [documentación oficial](http://www.apsis.ch/pound).
-  - _Pen_: es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. Para más información, ver la [documentación oficial](http://siag.nu/pen/).
+  - [Pen](http://siag.nu/pen/): es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. 
 + Balanceadores de carga hardware:
