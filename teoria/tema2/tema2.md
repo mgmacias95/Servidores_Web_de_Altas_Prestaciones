@@ -34,9 +34,9 @@ __4. Buscar diferentes tipos de productos:__
 * __Buscar productos comerciales para servidores de aplicaciones.__
 * __Buscar productos comerciales para servidores de almacenamiento.__
 
-+ Balanceadores de carga software:
-  - [Enterprise VA MAX]((https://www.loadbalancer.org/products/virtual/enterprise-va-max)): balanceador de carga software de la empresa _loadbalencer.org_. Ofrece un balanceador de carga software, con capacidad para una alta escalabilidad del sistema, a cambio de una licencia de pago.
-  - [nginx](http://nginx.org/en/docs/http/load_balancing.html): nginx también permite actuar como un balanceador de carga HTTP. 
-  - _Pound_: Pound es otro balanceador de carga software capaz de balancear una gran cantidad de nodos ante peticiones HTTP. Es gratuito y con licencia GPT. Para más información, ver la [documentación oficial](http://www.apsis.ch/pound).
-  - [Pen](http://siag.nu/pen/): es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. 
+- Balanceadores de carga software:
+  - __[Enterprise VA MAX](https://www.loadbalancer.org/products/virtual/enterprise-va-max)__: balanceador de carga software de la empresa _loadbalencer.org_. Ofrece un balanceador de carga software, con capacidad para una alta escalabilidad del sistema, a cambio de una licencia de pago.
+  - __[nginx](http://nginx.org/en/docs/http/load_balancing.html)__: nginx también permite actuar como un balanceador de carga HTTP. 
+  - __[Pound](http://www.apsis.ch/pound)__: Pound es otro balanceador de carga software capaz de balancear una gran cantidad de nodos ante peticiones HTTP. Es gratuito y con licencia GPT. 
+  - __[Pen](http://siag.nu/pen/)__: es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. 
 + Balanceadores de carga hardware:
