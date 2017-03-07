@@ -46,3 +46,10 @@ __4. Buscar diferentes tipos de productos:__
   - __[Pound](http://www.apsis.ch/pound)__: Pound es otro balanceador de carga software capaz de balancear una gran cantidad de nodos ante peticiones HTTP. Es gratuito y con licencia GPT. 
   - __[Pen](http://siag.nu/pen/)__: es un balanceador de carga capaz de manejar peticiones DNS, HTTP o SMTP, además de tener una alta disponibilidad, alta escalabilidad y robustez. También se puede instalar en una gran cantidad de sistemas Linux, como en Windows. 
 + Balanceadores de carga hardware:
+
+- Servidores de Almacenamiento:
+    * [__Microsoft Azure__](https://azure.microsoft.com/en-us/services/storage/?b=16.50): desde _Azure_ podemos tener nuestro propio servidor de base de datos, SQL o NoSQL. Al ser en la nube, es altamente escalable y tiene una alta disponibilidad.
+
+    * [__mLab__](https://mlab.com/): herramienta cloud que aloja bases de datos MongoDB. Nos permite monitorizar la base de datos, hacer copias de seguridad y nos proporciona una serie de herramientas para la administración de la base de datos.
+
+    * [__Compose__](https://www.compose.com/): es una herramienta bastante parecida a _mLab_ pero que funciona con muchos tipos diferentes de bases de datos. Su objetivo final es proporcionar una forma sencilla de administrar una base de datos, de forma que el usuario pueda centrarse en el desarrollo de su aplicación en lugar de en la administración de la base de datos.
