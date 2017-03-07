@@ -32,6 +32,8 @@ Usando una herramienta que monitorice cada servicio por separado. Algunos ejempl
 
 * [__Inciga__](https://www.icinga.com/): proporciona una interfaz gráfica para realizar tareas de monitorización y, además, tiene un histórico de problemas, notificaciones, problemas de servicios/aplicaciones y es extendible. Nació como un _fork_ de _Nagios_.
 
+* [__Cacti__](http://www.cacti.net/): interfaz PHP para [RRDtool](http://oss.oetiker.ch/rrdtool/). Permite hacer gráficos sobre distintas métricas tales como tráfico, uso de un determinado recurso... De hecho, en la documentación de _RRDtool_ explican que podemos hacer gráficos de cualquier conjunto de datos que queramos: _RRDtool_ nos ayuda a crear una base de datos y crear gráficos en PNG de los mismos.
+
 __4. Buscar diferentes tipos de productos:__
 
 * __Buscar ejemplos de balanceadores software y hardware (productos comerciales).__
