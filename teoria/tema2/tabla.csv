@@ -1,5 +1,5 @@
-Availability,Replicate
-Web,0.85,True,
+Component,Availability,Replicate
+Web,0.85,True
 Application,0.9,True
 Database,0.999,True
 DNS,0.98,True
