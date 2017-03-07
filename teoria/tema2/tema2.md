@@ -31,4 +31,5 @@ __3. ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el ser
 __4. Buscar diferentes tipos de productos:__
 
 * __Buscar ejemplos de balanceadores software y hardware (productos comerciales).__
-* __Buscar productos comerciales para servidores de aplicaciones. (3) Buscar productos comerciales para servidores de almacenamiento.__
+* __Buscar productos comerciales para servidores de aplicaciones.__
+* __Buscar productos comerciales para servidores de almacenamiento.__
