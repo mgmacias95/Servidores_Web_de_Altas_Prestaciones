@@ -28,9 +28,9 @@ Para solucionar esto y poder instalar los módulos, vamos a ejecutar las siguien
 
 1. Actualizar el kernel de nuestro ArchLinux y las cabeceras del kernel: 
 
-```
-sudo pacman -Si linux
-```
+  ```
+  sudo pacman -Si linux
+  ```
 
 ![update1](update1.png)
 
@@ -38,45 +38,45 @@ Con esta orden podemos ver la versión del kernel de nuestro sistema, y otro tip
 
 2. Actualizar las cabeceras del kernel:
 
-```
-sudo pacman -S linux-headers
-```
+  ```
+  sudo pacman -S linux-headers
+  ```
 
 3. Instalar VirtualBox
 
-```
-sudo pacman -S virtualbox virtualbox-guest-iso
-```
+  ```
+  sudo pacman -S virtualbox virtualbox-guest-iso
+  ```
 
 4. Activar los módulos del kernel para VirtualBox
 
-```
-sudo modprobe -a vboxdrv vboxnetflt vboxpci vboxnetadp
-```
+  ```
+  sudo modprobe -a vboxdrv vboxnetflt vboxpci vboxnetadp
+  ```
 
 5. Hacemos que VirtualBox recargue los módulos.
 
-```
-sudo /sbin/rcvboxdrv -h
-```
+  ```
+  sudo /sbin/rcvboxdrv -h
+  ```
 
 6. Una vez hecho esto, añadimos nuestro usuario a los usuarios de VirtualBox
 
-```
-sudo gpasswd -a $USER vboxusers
-```
+  ```
+  sudo gpasswd -a $USER vboxusers
+  ```
 
 7. Por último, para no tener que estar recargando los módulos manualmente, podemos incluir un pequeño archivo para que cargue los módulos de VirtualBox al arrancar la máquina:
 
-```
-sudo nano /etc/modules-load.d/virtualbox.conf
+  ```
+  sudo nano /etc/modules-load.d/virtualbox.conf
 
-# Modules
-vboxdrv
-vboxnetadp
-vboxnetflt
-vboxpci
-```
+  # Modules
+  vboxdrv
+  vboxnetadp
+  vboxnetflt
+  vboxpci
+  ```
 
 ### Aceleración hardware desactivada
 
