@@ -86,6 +86,19 @@ Una vez resuelto el problema anterior, pudimos arrancar la máquina virtual pero
 
 Para resolver esto, es necesario acceder a la BIOS de la máquina anfitriona y activar la opción correspondiente.
 
+### Configuración de Red
+Para poder establecer comunicación entre la máquina anfitriona y la máquina virtual, se ha tenido que configurar VirtualBox. Para ello, se ha tenido que añadir un __adaptador puente__ de red a la configuración de la máquina virtual, quedándonos una máquina virtual con un adaptador _NAT_ y otro _Puente_. 
+
+Además, se ha modificado el achivo `/etc/network/interfaces` añadiendo las siguientes líneas:
+
+```
+auto enp0s8
+iface enp0s8 inet dhcp
+```
+
+`enp0s8` es el nombre del adaptador de red puente (se puede ver haciendo `ipconfig -a`).
+
+
 ## Instalación de Ubuntu Server
 
 Para instalar _Ubuntu Server_ hemos seguido las indicaciones del guión de prácticas.
@@ -113,3 +126,8 @@ Y, para hacer una última comprobación de que nuestro servidor está operativo 
 y accedemos a él desde el __navegador de la máquina anfitriona__.
 
 ![yay](yay.png)
+
+### Comprobación del servidor SSH
+Para comprobar la instalación del servidor SSH, se ha probado a hacer un acceso desde la máquina anfitriona.
+
+![ssh](ssh.png)
