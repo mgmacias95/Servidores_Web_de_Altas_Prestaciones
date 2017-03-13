@@ -18,6 +18,12 @@ Para comprobar qué modulos del kernel nos faltan por instalar, podemos ejecutar
 
 ![error3](error3.png)
 
+Como podemos observar, faltan por instalar los módulos del kernel:
+* __vboxdrv__
+* __vboxnetflt__
+* __vboxpci__
+* __vboxnetadp__
+
 ### Aceleración hardware desactivada
 
 Una vez resuelto el problema anterior, pudimos arrancar la máquina virtual pero nos apareció el siguiente aviso:
