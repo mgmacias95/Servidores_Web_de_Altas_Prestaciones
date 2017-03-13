@@ -24,6 +24,30 @@ Como podemos observar, faltan por instalar los módulos del kernel:
 * __vboxpci__
 * __vboxnetadp__
 
+Para solucionar esto y poder instalar los módulos, vamos a ejecutar las siguientes órdenes en nuestro terminal, para actualizar el kernel e instalar todo lo necesario.
+
+1. Actualizar el kernel de nuestro ArchLinux y las cabeceras del kernel: 
+
+```
+sudo pacman -Si linux
+```
+
+![update1](update1.png)
+
+Con esta orden podemos ver la versión del kernel de nuestro sistema, y otro tipo de información útil. Principalmente lo usaremos para ver si estamos en la última versión o no. 
+
+2. Actualizar las cabeceras del kernel:
+
+```
+sudo pacman -S linux-headers
+```
+
+3. Instalar VirtualBox
+
+```
+sudo pacman -S virtualbox virtualbox-guest-iso
+```
+
 ### Aceleración hardware desactivada
 
 Una vez resuelto el problema anterior, pudimos arrancar la máquina virtual pero nos apareció el siguiente aviso:
