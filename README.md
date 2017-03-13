@@ -13,4 +13,4 @@ Actualmente tenemos que
 
 - [x] Hacer ejecicio tema 1.
 - [x] Hacer ejercicios tema 2.
-- [ ] Hacer práctica 1
+- [x] Hacer práctica 1
