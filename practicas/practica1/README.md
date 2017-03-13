@@ -48,6 +48,36 @@ sudo pacman -S linux-headers
 sudo pacman -S virtualbox virtualbox-guest-iso
 ```
 
+4. Activar los módulos del kernel para VirtualBox
+
+```
+sudo modprobe -a vboxdrv vboxnetflt vboxpci vboxnetadp
+```
+
+5. Hacemos que VirtualBox recargue los módulos.
+
+```
+sudo /sbin/rcvboxdrv -h
+```
+
+6. Una vez hecho esto, añadimos nuestro usuario a los usuarios de VirtualBox
+
+```
+sudo gpasswd -a $USER vboxusers
+```
+
+7. Por último, para no tener que estar recargando los módulos manualmente, podemos incluir un pequeño archivo para que cargue los módulos de VirtualBox al arrancar la máquina:
+
+```
+sudo nano /etc/modules-load.d/virtualbox.conf
+
+# Modules
+vboxdrv
+vboxnetadp
+vboxnetflt
+vboxpci
+```
+
 ### Aceleración hardware desactivada
 
 Una vez resuelto el problema anterior, pudimos arrancar la máquina virtual pero nos apareció el siguiente aviso:
