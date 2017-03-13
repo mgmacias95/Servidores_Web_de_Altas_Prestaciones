@@ -62,4 +62,3 @@ __4. Buscar diferentes tipos de productos:__
     - [__mLab__](https://mlab.com/): herramienta cloud que aloja bases de datos MongoDB. Nos permite monitorizar la base de datos, hacer copias de seguridad y nos proporciona una serie de herramientas para la administración de la base de datos.
 
     - [__Compose__](https://www.compose.com/): es una herramienta bastante parecida a _mLab_ pero que funciona con muchos tipos diferentes de bases de datos. Su objetivo final es proporcionar una forma sencilla de administrar una base de datos, de forma que el usuario pueda centrarse en el desarrollo de su aplicación en lugar de en la administración de la base de datos.
-
