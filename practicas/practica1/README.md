@@ -28,13 +28,13 @@ Para solucionar esto y poder instalar los módulos, vamos a ejecutar las siguien
 
 1. Actualizar el kernel de nuestro ArchLinux y las cabeceras del kernel: 
 
-  ```
-  sudo pacman -Si linux
-  ```
+    ```
+    sudo pacman -Si linux
+    ```
 
-![update1](update1.png)
+  ![update1](update1.png)
 
-Con esta orden podemos ver la versión del kernel de nuestro sistema, y otro tipo de información útil. Principalmente lo usaremos para ver si estamos en la última versión o no. 
+  Con esta orden podemos ver la versión del kernel de nuestro sistema, y otro tipo de información útil. Principalmente lo usaremos para ver si estamos en la última versión o no. 
 
 2. Actualizar las cabeceras del kernel:
 
