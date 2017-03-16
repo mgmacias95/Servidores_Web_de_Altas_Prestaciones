@@ -2,6 +2,14 @@
 
 __1. Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el enrutamiento del tráfico de un servidor para pasar tráfico de una subred a otra.__
 
+### Windows
+
+Windows Server proporciona una herramienta gráfica capaz de añadir a nuestro servidor la funcionalidad para realizar un NAT y poder enrutar el tráfico de una subred a otra. En la [documentación oficial](https://technet.microsoft.com/en-us/library/cc770798(v=ws.10).aspx) se explica de forma muy breve cómo crear paso a paso una configuración NAT en nuestro servidor, y enrutar el tráfico a una máquina u otra gracias a la herramienta ___Server Manager___ de Windows Server.
+
+Pero para un mayor detalle y una explicación más clara, podemos ir a la documentación de [Dell](http://www.dell.com/support/article/us/en/19/HOW10169/configuring-windows-server-2012-r2-as-a-router?lang=EN), que va más paso a paso que la documentación oficial y añade capturas de pantalla que facilitan mucho el trabajo.
+
+### Linux
+
 __2. Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.__
 
 ### Windows
