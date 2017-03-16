@@ -8,6 +8,8 @@ Windows Server proporciona una herramienta gráfica capaz de añadir a nuestro s
 
 Pero para un mayor detalle y una explicación más clara, podemos ir a la documentación de [Dell](http://www.dell.com/support/article/us/en/19/HOW10169/configuring-windows-server-2012-r2-as-a-router?lang=EN), que va más paso a paso que la documentación oficial y añade capturas de pantalla que facilitan mucho el trabajo.
 
+Esta herramienta nos permite definir qué servidor realizará el NAT, configurar a qué interfaz de red está conectado el servidor, configurar los DNS y el DHCP, incluso teniéndolo separado del RRAS.
+
 ### Linux
 
 __2. Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.__
