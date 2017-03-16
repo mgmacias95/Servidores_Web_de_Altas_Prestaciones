@@ -15,3 +15,32 @@ Además, podemos definir el filtrado para distintos protocolos como TCP (SMTP, H
 
 En [Windows IT Pro](http://windowsitpro.com/security/packet-filtering-and-windows) explican también que, aunque hay _Firewalls_ y herramientas hechas por terceros, están más pensadas para un uso doméstico que para su uso en un servidor.
 
+### Linux
+
+La herramienta para bloqueo de paquetes y enrutamiento más usada en Linux es `iptables`. Debido a su gran popularidad, hay un montón de tutoriales en internet sobre su uso. En _DigitalOcean_ disponemos de uno donde [se explica su arquitectura y funcionamiento](https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture) y otro donde dan [indicaciones para bloquear y filtrar paquetes de entrada en CentOS6](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-basic-iptables-firewall-on-centos-6) y [también para Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04).
+
+Para consultar las reglas que tenemos actualmente definidas:
+
+```bash
+$ sudo iptables -L
+```
+
+Y para consultar las reglas definidas con un formato diferente al anterior:
+
+```bash
+$ sudo iptables -S
+```
+
+Para borrar todas las reglas que tenemos definidas:
+
+```
+$ sudo iptables -F
+```
+
+Para aceptar conexiones al puerto 80:
+
+```bash
+$ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+
+La opción `-A` indica que queremos añadir una nueva regla. En el caso de `iptables` esta regla puede ser tanto de entrada como de salida. La opción `-p tcp` comprueba que los paquetes que se reciben son TCP. Por último, podemos tanto aceptar como bloquear paquetes.
