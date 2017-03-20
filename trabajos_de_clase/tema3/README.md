@@ -12,6 +12,35 @@ Esta herramienta nos permite definir qué servidor realizará el NAT, configurar
 
 ### Linux
 
+Para enrutar el tráfico en Linux, podemos usar `route` para crear nuestra NAT y poder redirigir el tráfico en nuestra máquina. En este [enlace](http://linux-ip.net/html/tools-ip-route.html) podemos encontrar una gran cantidad de comandos muy bien explicados sobre cómo usar todas las opciones posibles de `route` junto con ejemplos. Los más importantes son:
+
+Nos permite ver la tabla principal de direcciones:
+
+```bash
+$ route -n
+```
+Ver la tabla local de enrutamiento:
+
+```bash
+$ ip route show table local
+```
+Añadir una dirección a la tabla de direccionamiento:
+
+```bash
+$ ip route add 10.38.0.0/16 via 192.168.100.1
+```
+
+Añadir una dirección de direccionamiento por defecto:
+
+```bash
+$ ip route add 10.38.0.0/16 via 192.168.100.1
+```
+
+Cear una NAT para una red entera:
+
+```bash
+$ ip route add nat 205.254.211.32/29 via 192.168.100.32
+```
 __2. Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.__
 
 ### Windows
