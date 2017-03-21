@@ -42,3 +42,24 @@ Siguiendo los pasos del guión de prácticas hemos configurado la máquina secun
 ![ssh-publickey](4.png)
 
 
+
+
+## Actualizar el contenido de _/var/www/_ con `crontab`.
+
+Para realizar esta tarea, se ha modificado el fichero que se encuentra en _/etc/crontab_ de la máquina secundaria. Para ello, ejecutamos la siguiente línea en el terminal:
+
+```bash
+sudo nano /etc/crontab
+```
+
+Una vez dentro, insertamos la siguiente línea en nuestro fichero _crontab_:
+
+```
+0 */3 * * * root rsync -avz --exclude=**/stats --exclude=**/error --exclude=**/files/pictures -e ssh alum@192.168.0.203:/var/www/ /var/www/
+```
+
+Con el patrón `0 */3 * * *` indicamos que se ejecute la orden en el minuto 0cada tres horas. Existe la página https://crontab.guru/ que nos permite saber si estamos poniendo bien el patrón, y ver cuándo se ejecutará por primera vez instrucción que introduzcamos en el fichero crontab.
+
+En la siguiente imagen podemos ver cómo quedaría el fichero crontab.
+
+![crontab](5.png)
