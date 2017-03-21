@@ -10,6 +10,8 @@ $ tar czf - directorio_tonto/ | ssh alum2@192.168.0.204 'cat > ~/tar.tgz'
 
 Así, comprimiremos el contenido del directorio `directorio_tonto` y enviaremos el archivo comprimido a nuestro segundo servidor. Ahora bien, esto puede resultar algo rudimentario por lo que es mejor usar alternativas como `rsync`
 
+![copyssh](copyssh.png)
+
 ## Instalar la herramienta `rsync`
 
 Para instalar la herramienta, tenemos que ejecutar la orden en nuestra máquina:
