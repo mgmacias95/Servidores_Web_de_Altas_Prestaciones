@@ -57,6 +57,17 @@ ssh-keygen -b 4096 -t rsa
 
 Que nos dará una salida por pantalla tal y como la que podemos ver a continuación:
 
+![rsa](6.png)
+
+Tras esto, tenemos que copiar la clave pública a la máquina principal. Para ello ejecutamos:
+
+```bash
+$ ssh-copy-id alum@192.168.0.203
+```
+![rsa2](7.png)
+
+Y por último, probamos que se ha realizado la copia correctamente conectándonos a la máquina principal por SSH.
+  
 ![ssh-publickey](4.png)
 
 ## Actualizar el contenido de _/var/www/_ con `crontab`.
