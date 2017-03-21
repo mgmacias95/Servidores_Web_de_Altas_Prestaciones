@@ -48,7 +48,14 @@ Por último, para comprobar que la sincronización ha funcionado, probamos a lis
 ![syncdone](syncdone.png)
 
 ## Acceder a SSH sin contraseña
-Siguiendo los pasos del guión de prácticas hemos configurado la máquina secundaria para acceder a la primera por SSH sin necesidad de contraseña.
+
+Para poder acceder por SSH de una máquina a otra, lo primero es generar un par de claves RSA para la comunicació por SSH. Para ello, ejecutamos el comando:
+
+```bash
+ssh-keygen -b 4096 -t rsa
+```
+
+Que nos dará una salida por pantalla tal y como la que podemos ver a continuación:
 
 ![ssh-publickey](4.png)
 
