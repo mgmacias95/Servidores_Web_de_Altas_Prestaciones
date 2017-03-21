@@ -48,8 +48,17 @@ Por último, para comprobar que la sincronización ha funcionado, probamos a lis
 ![syncdone](syncdone.png)
 
 ## Acceder a SSH sin contraseña
-Siguiendo los pasos del guión de prácticas hemos configurado la máquina secundaria para acceder a la primera por SSH sin necesidad de contraseña.
-
+1. Crear una clave _RSA_
+  ```bash
+  $ ssh-keygen -b 4096 -t rsa
+  ```
+  
+ 2. Copiar la clave pública a la máquina principal
+  ```bash
+  $ ssh-copy-id alum@192.168.0.203
+  ```
+3. Probar que se ha realizado la copia correctamente conectándonos a la máquina principal por SSH.
+  
 ![ssh-publickey](4.png)
 
 ## Actualizar el contenido de _/var/www/_ con `crontab`.
