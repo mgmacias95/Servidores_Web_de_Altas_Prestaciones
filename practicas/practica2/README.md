@@ -52,9 +52,6 @@ Siguiendo los pasos del guión de prácticas hemos configurado la máquina secun
 
 ![ssh-publickey](4.png)
 
-
-
-
 ## Actualizar el contenido de _/var/www/_ con `crontab`.
 
 Para realizar esta tarea, se ha modificado el fichero que se encuentra en _/etc/crontab_ de la máquina secundaria. Para ello, ejecutamos la siguiente línea en el terminal:
