@@ -23,3 +23,22 @@ $ rsync -avz -e ssh alum@192.168.1.136:/var/www/ /var/www/
 Con esto, `rsync` realizará una copia del directorio de la máquina principal a la máquina secundaria por medio de `ssh`. Esto se especifica usando el parámetro `-e` y la dirección IP de la máquina principal. En la siguiente imagen podemos ver el resultado:
 
 ![rsync-copy](2.png)
+
+Si quisiéramos excluir ciertos directorios de nuestra copia de seguridad podemos usar el parámetro `--exclude`. Si queremos que al borrar un archivo en un servidor se borre también en el otro, podemos usar el parámetro `--delete`:
+
+```bash
+$ rsync -avz --delete --exclude=**/stats --exclude=**/error --exclude=**/files/pictures -e ssh alum@192.168.0.203:/var/www/ /var/www/
+```
+
+![rsync-param](3.png)
+
+Por último, para comprobar que la sincronización ha funcionado, probamos a listar el directorio `/var/www/html` en ambas máquinas:
+
+![syncdone](syncdone.png)
+
+## Acceder a SSH sin contraseña
+Siguiendo los pasos del guión de prácticas hemos configurado la máquina secundaria para acceder a la primera por SSH sin necesidad de contraseña.
+
+![ssh-publickey](4.png)
+
+

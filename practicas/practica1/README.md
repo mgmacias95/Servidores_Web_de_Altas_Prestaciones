@@ -113,7 +113,7 @@ Tras esto, comprobamos que se ha instalado correctamente el servidor Apache.
 
 ![apache](apache.png)
 
-Y, para hacer una última comprobación de que nuestro servidor está operativo creamos el siguiente fichero, que se llamará `hola.html`:
+Y, para hacer una última comprobación de que nuestro servidor está operativo creamos el siguiente fichero, que se llamará `prueba.html`:
 
 ```html
 <html>
