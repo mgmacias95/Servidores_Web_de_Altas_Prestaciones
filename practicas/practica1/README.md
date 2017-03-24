@@ -96,7 +96,7 @@ auto enp0s8
 iface enp0s8 inet dhcp
 ```
 
-`enp0s8` es el nombre del adaptador de red puente (se puede ver haciendo `ipconfig -a`).
+`enp0s8` es el nombre del adaptador de red puente (se puede ver haciendo `ifconfig -a`).
 
 
 ## Instalación de Ubuntu Server
