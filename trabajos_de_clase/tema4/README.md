@@ -18,3 +18,10 @@ El [DELL PowerEdge](http://www.dell.com/es/empresas/p/poweredge-r230/pd?oc=per23
 Su precio es de 1144€. 
 
 Para poder llegar a los 64 GB de RAM que tiene el _mainframe_ de IBM necesitaríamos 8 ordenadores de este tipo, lo que nos costaría 9152€. Con 8 servidores _DELL PowerEdge_ tendríamos 8 procesadores de propósito general y 64 GB de RAM, más o menos lo mismo que el _mainframe_ de IBM pero 10 veces más barato.
+
+---
+
+__2. Buscar información sobre precio y características de balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y otros.__
+
+En la página de [__Barracuda__](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=240,540,642,842) podemos seleccionar un máximo de cuatro balanceadores de carga para comparar entre sí, aunque no enseñan el precio.
+
