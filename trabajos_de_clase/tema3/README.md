@@ -41,6 +41,9 @@ Cear una NAT para una red entera:
 ```bash
 $ ip route add nat 205.254.211.32/29 via 192.168.100.32
 ```
+
+---
+
 __2. Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.__
 
 ### Windows
