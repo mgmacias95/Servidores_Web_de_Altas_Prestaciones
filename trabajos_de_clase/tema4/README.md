@@ -12,8 +12,8 @@ En cuanto al precio, el [IBM System z9](https://en.wikipedia.org/wiki/IBM_System
 ### DELL PowerEdge
 El [DELL PowerEdge](http://www.dell.com/es/empresas/p/poweredge-r230/pd?oc=per2302&model_id=poweredge-r230) tiene las siguientes características:
 
-    * Procesador Intel Xeon E3-1200 v5 3.0GHz con 8M de cache, 4 cores y 8 threads (procesador de propósito general).
-    * 8 GB de RAM
+* Procesador Intel Xeon E3-1200 v5 3.0GHz con 8M de cache, 4 cores y 8 threads (procesador de propósito general).
+* 8 GB de RAM
 
 Su precio es de 1144€. 
 
