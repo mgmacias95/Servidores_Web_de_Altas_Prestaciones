@@ -25,3 +25,23 @@ __2. Buscar información sobre precio y características de balanceadores hardwa
 
 En la página de [__Barracuda__](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=240,540,642,842) podemos seleccionar un máximo de cuatro balanceadores de carga para comparar entre sí, aunque no enseñan el precio.
 
+---
+
+__3. Buscar información sobre los métodos de balaceo que implementan los dispositivos recogidos en el ejercicio 4.2__
+
+---
+
+__4. Instala y configura en máquina virtual el balanceador *ZenLoadBalancer*__
+
+---
+
+__5. Probar los diferentes métodos de redirección HTTP. ¿Cuál es más adecuado y cuál no para hacer balanceo de carga global? ¿Por qué?__
+
+---
+
+__6. Buscar información sobre los bloques de IP para los distintos países y continentes. Implementar en Javascript o PHP la detección de zona desde donde se conecta un usuario.__
+
+---
+
+__7. Buscar información sobre distintos métodos y herramientas para implementar GSLB.__
+
