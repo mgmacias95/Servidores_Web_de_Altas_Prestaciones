@@ -23,11 +23,26 @@ Para poder llegar a los 64 GB de RAM que tiene el _mainframe_ de IBM necesitarí
 
 __2. Buscar información sobre precio y características de balanceadores hardware específicos. Compara las prestaciones que ofrecen unos y otros.__
 
-En la página de [__Barracuda__](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=240,540,642,842) podemos seleccionar un máximo de cuatro balanceadores de carga para comparar entre sí, aunque no enseñan el precio.
+En la página de [__Barracuda__](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=240,540,642,842) podemos seleccionar un máximo de cuatro balanceadores de carga para comparar entre sí, aunque no enseñan el precio (cuando haces click en _Purchase_ sale un mensaje diciendo que no aceptan pedidos fuera de EEUU). Aún así, podemos hacer un pequeño análisis de los modelos que se están comparando:
+
+El peor de todos, sin duda, es el modelo 240, ya que acepta muy pocos ordenadores (10) y no tiene mecanismos de seguridad incorporados como SSL o protección contra ataques DDoS. El resto de modelos comparados (520, 642 y 842) tienen las mismas características de seguridad y la diferencia entre ellos es el tráfico (_throughput_) máximo que aceptan y el número de servidores que soportan. También es verdad que hay más modelos, pero el comparador de Barracuda sólo acepta 4 modelos para comparar como máximo. 
+
+Para una empresa pequeña, el ideal sería el 540 ya que incorpora mecanismos de seguridad. El modelo intermedio entre el 240 y el 540 (el modelo 440) no incorpora mecanismos de seguridad contra ataques DDoS y, por tanto, no sería una buena opción aunque fuese algo más económico.
+
+Aunque en la página de Barracuda no aparece el precio, en [__Enter Computers__](http://www.entercomputers.com/networking/network-appliance-devices-1164/load-balancers.html) venden el modelo 440 por unos $5.500. Esto nos sirve para hacernos una idea del precio del resto de balanceadores de carga.
 
 ---
 
 __3. Buscar información sobre los métodos de balaceo que implementan los dispositivos recogidos en el ejercicio 4.2__
+
+Para encontrar información sobre los distintos métodos de balanceo de carga que imeplementan los dispositivos de _Barracuda_, tenemos que consultar la [hoja de especificaciones](https://assets.barracuda.com/assets/docs/dms/Barracuda_Load_Balancer_ADC_DS_ES.pdf). En la segunda página podemos ver una sección llamada _Balanceo de Carga_ en el que enumera los distintos métodos disponibles en sus balanceadores:
+
+* Round-robin
+* Round-robin ponderado
+* Servidor con menos conexiones
+* Adaptado por carga de CPU
+
+Y en el caso de que queramos implementar balanceo de carga global, también nos permite balancear por IP y hacer _health check_ entre distintos servidores.
 
 ---
 
