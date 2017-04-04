@@ -4,6 +4,55 @@
 
 ## Configurando un Balanceador de Carga con nginx
 
+Para instalar `nginx`, ejecutamos la siguiente orden en nuestro terminal:
+
+```bash
+$ sudo apt install nginx
+```
+
+y lo iniciaremos con:
+
+```bash
+# Ejecutar el servicio al arranque
+$ sudo systemctl enable nginx
+# e iniciar el servicio:
+$ sudo systemctl start nginx
+```
+
+Una vez instalado e iniciado el servicio, podemos empezar a configurar nuestro balanceador de carga con `nginx`. Para ello, tenemos que modificar el contenido del fichero de configuración, situado en `/etc/nginx/conf.d/default.conf` de la siguiente manera:
+
+```
+# IP's de los servidores finales
+upstream apaches {
+    # Maquina principal
+    server 192.168.1.136;
+    # Maquina secundaria 
+    server 192.168.1.139;
+}
+
+# Configuración del servidor 
+server{
+    # Puerto en el que escuchará
+    listen 80;
+    server_name balanceador;
+
+    # Archivos de log
+    access_log /var/log/nginx/balanceador.access.log;
+    error_log /var/log/nginx/balanceador.error.log;
+    root /var/www/;
+    
+    location /
+    {
+        proxy_pass http://apaches;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+    }
+}
+```
+
 ## Configurando un Balanceador de Carga con haproxy
 Para instalar `haproxy` ejecutamos
 
