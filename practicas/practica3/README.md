@@ -39,6 +39,47 @@ Si accedemos desde nuestro navegador a la URL del balanceador (`192.168.0.207`) 
 
 ![haproxy_roundrobin](haproxy_roundrobin.png)
 
+## Configurando un balanceador de carga con Pound
+Para esta parte de la práctica, vamos a seguir [este tutorial](http://www.tecmint.com/setting-up-pound-web-server-load-balancing-in-linux/). 
+
+En primer lugar, instalamos `pound` con el siguiente comando:
+
+```bash
+$ sudo apt install pound
+```
+
+Una vez instalado, pasamos a editar el archivo de configuración `/etc/pound/pound.cfg`. Debemos tener en cuenta que la IP de la máquina que hará de balanceador es `192.168.0.212` y la de los dos servidores finales son `192.168.0.203` y `192.168.0.204`.
+
+```
+ListenHTTP
+    Address 192.168.0.212
+    Port    80
+    Service
+        BackEnd
+            Address 192.168.0.204
+            Port    80
+        End
+    End
+    Service
+        BackEnd
+            Address 192.168.0.203
+            Port    80
+        End
+    End
+End
+```
+
+Por último, debemos arrancar el servicio
+
+```bash
+$ sudo /etc/init.d/pound restart
+
+```
+
+Si todo ha salido bien, veremos este mensaje:
+
+![poundstart](poundstart.png)
+
 ## Sometiendo la granja web a una carga alta
 ### Instalando `ab` en la máquina anfitriona
 Para poder someter la granja web a una alta carga, hemos instalado _Apache Benchmark_ en nuestra máquina anfitriona (__Arch Linux__):
