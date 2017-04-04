@@ -37,6 +37,23 @@ $ sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
 
 Si accedemos desde nuestro navegador a la URL del balanceador (`192.168.0.207`) iremos intercalando entre las páginas de prueba de cada servidor:
 
-![haproxy_m1](haproxy_m1.png)
-![haproxy_m2](haproxy_m2.png)
+![haproxy_roundrobin](haproxy_roundrobin.png)
 
+## Sometiendo la granja web a una carga alta
+### Instalando `ab` en la máquina anfitriona
+Para poder someter la granja web a una alta carga, hemos instalado _Apache Benchmark_ en nuestra máquina anfitriona (__Arch Linux__):
+
+```bash
+$ pacaur -S apache-tools
+```
+
+### haproxy
+Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
+
+```bash
+$ ab -n 100000 -c 500 http://192.168.0.207/prueba.html
+```
+
+![ab_haproxy](ab_haproxy.png)
+
+En hacer las 100000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido unas 1500 peticiones y cada una ha sido respondida, en media, en unos 340 ms. La petición más lenta ha tardado 16030 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 243 ms.
