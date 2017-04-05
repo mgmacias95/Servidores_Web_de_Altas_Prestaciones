@@ -227,7 +227,8 @@ Al igual que en los casos anteriores,
 
 | Balanceador | Tiempo total | Tiempo mínimo | Tiempo máximo | Peticiones fallidas |
 |:-----------:|:------------:|:-------------:|:-------------:|:-------------------:|
-| nginx       | 57,294 s     | 49 ms         | 57283 ms      | 0                   |
-| haproxy     | 55,718 s     | 201 ms        | 32987 ms      | 0                   |
+| __nginx__   | 57,294 s     | 49 ms         | 57283 ms      | 0                   |
+| __haproxy__ | 55,718 s     | 201 ms        | 32987 ms      | 0                   |
+| __pound__   | 105,304 s    | x ms          | x ms          | 0                   |
 
 Como se ve en la tabla anterior, tanto _nginx_ como _haproxy_ han sido capaces de soportar la misma carga y en un tiempo bastante parecido (sólo dos segundos de diferencia entre sí). _Nginx_ es más eficiente, pues ha sido capaz de responder el 50% de las peticiones en sólo 49ms mientras que _haproxy_ lo ha hecho en 201ms. Ahora bien, el tiempo máximo de respuesta de _haproxy_  ha sido de 3 segundos mientras que _nginx_ ha necesitado dos segundos más. Por tanto,  podemos decir que la configuración hecha con _haproxy_ es mejor que la que hemos hecho con _nginx_.
