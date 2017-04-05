@@ -148,17 +148,15 @@ Una vez instalado, pasamos a editar el archivo de configuración `/etc/pound/pou
 ListenHTTP
     Address 192.168.0.212
     Port    80
-    Service
-        BackEnd
-            Address 192.168.0.204
-            Port    80
-        End
+End
+Service
+    BackEnd
+        Address 192.168.0.204
+        Port    80
     End
-    Service
-        BackEnd
-            Address 192.168.0.203
-            Port    80
-        End
+    BackEnd
+        Address 192.168.0.203
+        Port    80
     End
 End
 ```
