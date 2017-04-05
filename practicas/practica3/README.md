@@ -182,6 +182,14 @@ Para poder someter la granja web a una alta carga, hemos instalado _Apache Bench
 $ pacaur -S apache-tools
 ```
 
+### nginx
+
+Para probar nuestra granja web con un balanceador `nginx` con configuración Round-Robin, vamos a lanzar 100000 peticiones de 500 en 500 con _apache benchmark_ a nuestro balanceador, pidiendo la página `prueba.html`.
+
+```
+$ ab -n 100000 -c 500 http://192.168.43.198/prueba.html
+```
+
 ### haproxy
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
 
