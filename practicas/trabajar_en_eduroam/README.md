@@ -6,6 +6,8 @@ Una de las posibles soluciones es usar, al menos en __VirtualBox__, una conexió
 
 ## Cómo configurar una conexión Only-Host
 
+### Instalación de paquetes y módulos necesarios
+
 Para empezar, tenemos que crear en VirtualBox una nueva red _Only-Host_. Pero antes de esto, debemos instalar en nuestra máquina anfitriona el paquete `net-tools` ya que el VBoxManage utiliza las órdenes `ifconfig` y `route` para asignar direcciones IP y encaminarlas a la interfaz del host.
 
 ```bash
@@ -39,3 +41,16 @@ vboxpci         # módulo necesario para ejecutar cualquier
                 # a través de un dispositivo PCI en el host
 ```
 
+### Configuración en VirtualBox
+
+Una vez instalados todos los módulos y herramientas, podemos pasar a configurar la red y VirtualBox.
+
+1. Acceder a la configuración de red en VirtualBox: `Archivo > Preferencias > Red >Red solo-anfitrión > Agrega red solo-anfitrión`.
+
+2. Generar una nueva _red sólo-anfitrion_: cuando generemos una nueva red sólo-anfitrion, nos la generará como `vboxnet0`, como se puede ver en la siguiente imagen:
+
+![paso1](1.png)
+
+3. Configurar la red en las máquinas virtuales: una vez creada la red only-host, accedemos a la configuración de nuestra máquina virtual y añadimos un nuevo adaptador de red, que utilice la red only-host que acabamos de crear.
+
+![paso2](2.png)
