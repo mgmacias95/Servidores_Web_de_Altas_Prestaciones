@@ -2,7 +2,7 @@
 
 ### Marta Gómez y Braulio Vargas
 
-## Configurando un Balanceador de Carga con nginx
+## Configurando un Balanceador de Carga _Round-Robin_ con nginx
 
 Para instalar `nginx`, ejecutamos la siguiente orden en nuestro terminal:
 
@@ -52,6 +52,32 @@ server{
     }
 }
 ```
+
+Es posible, que nginx siga funcionando como servidor en vez de como balanceador de carga, ignorando nuestro fichero `default.conf` que hemos creado o modificado. Para ello, tenemos que modificar el fichero `nginx.conf` que se encuentra en la ruta `/etc/nginx/nginx.conf`. En él, tendremos que comentar la siguiente línea:
+
+```
+include /etc/nginx/sites-enabled
+```
+
+Y reiniciamos el servicio con
+
+```bash
+$ sudo systemctl restart nginx
+```
+
+### Probando el balanceador de carga
+
+Para probar el balanceador de carga, podemos ejecutar desde nuestra máquina anfitrión, la orden:
+
+```bash
+curl IP_BALANCEADOR/prueba.html
+# En nuestro caso
+curl 192.168.43.198/prueba.html
+```
+
+Tras esto, deberíamos obtener una salida en nuestro terminal como la que podemos ver a continuación:
+
+![haproxy_roundrobin](nginx_roundrobin.png)
 
 ## Configurando un Balanceador de Carga con haproxy
 Para instalar `haproxy` ejecutamos
