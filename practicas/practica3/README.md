@@ -210,12 +210,18 @@ La petición más lenta ha tardado 57283 ms, mientras qeu las más rápidas han 
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 99000 peticiones haciendo las peticiones de 500 en 500.
 
 ```bash
-$ ab -n 99000 -c 500 http://192.168.0.207/prueba.html
+$ ab -n 99000 -c 500 http://192.168.56.101/prueba.html
 ```
 
 ![ab_haproxy](ab_haproxy.png)
 
 En hacer las 99000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido 1776.81 peticiones y cada una ha sido respondida, en media, en 281.403 ms. La petición más lenta ha tardado 32987 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 201 ms.
+
+### pound
+
+Al igual que en los casos anteriores, 
+
+![ab_pound](ab_pound.png)
 
 ### Comparación entre los Balanceadores probados
 
