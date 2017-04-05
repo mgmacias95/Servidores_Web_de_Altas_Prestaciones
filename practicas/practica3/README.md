@@ -191,19 +191,19 @@ $ ab -n 99000 -c 500 http://192.168.56.104/prueba.html
 ```
 ![ab_nginx](ab_nginx.png)
 
-En este caso, hemos realizado 99000 peticiones al servidor, donde ha tardado casi 2 minutos en hacer el test completo. En este caso, han fallado 180 peticiones.
+En este caso, hemos realizado 99000 peticiones al servidor, donde ha tardado 57.294 segundos en hacer el test completo, sin peticiones fallidas.
 
-Por segundo, es capaz de atender 908.65 peticiones porsegundo, tardando unos 550ms, a una velocidad de transferencia de 302.40 Kbytes/sec.
+Por segundo, es capaz de atender 1727.94 peticiones porsegundo, tardando unos 289.361 ms, a una velocidad de transferencia de 577.11 Kbytes/sec.
 
-La petición más lenta ha tardado 108949 ms, mientras qeu las más rápidas han tardado 95ms.
+La petición más lenta ha tardado 57283 ms, mientras qeu las más rápidas han tardado 95ms.
 
 ### haproxy
-Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
+Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 99000 peticiones haciendo las peticiones de 500 en 500.
 
 ```bash
-$ ab -n 100000 -c 500 http://192.168.0.207/prueba.html
+$ ab -n 99000 -c 500 http://192.168.0.207/prueba.html
 ```
 
 ![ab_haproxy](ab_haproxy.png)
 
-En hacer las 100000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido unas 1500 peticiones y cada una ha sido respondida, en media, en unos 340 ms. La petición más lenta ha tardado 16030 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 243 ms.
+En hacer las 99000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido 1776.81 peticiones y cada una ha sido respondida, en media, en 281.403 ms. La petición más lenta ha tardado 32987 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 201 ms.
