@@ -2,7 +2,7 @@
 
 ### Marta Gómez y Braulio Vargas
 
-## Configurando un Balanceador de Carga _Round-Robin_ con nginx
+## Configurando un balanceador de carga _Round-Robin_ con nginx
 
 Para instalar `nginx`, ejecutamos la siguiente orden en nuestro terminal:
 
@@ -65,6 +65,19 @@ Y reiniciamos el servicio con
 $ sudo systemctl restart nginx
 ```
 
+## Configurando un balanceador de carga ponderado
+
+Para realizar esto, sabiendo que alguna de las máquinas finales es más potente y puede satisfacer más tráfico que otra, podemos asignarle un peso en el entorno `upstream` del fichero `default.conf` que configura nuestro balanceador. Por defecto, para todas las máquinas, este peso será 1. En nuestro caso, lo hemos probado de la siguiente manera:
+
+```
+upstream apaches {
+    # Maquina principal
+    server 192.168.1.136 weight=3; 
+    # Maquina secundaria 
+    server 192.168.1.139;
+}
+```
+
 ### Probando el balanceador de carga
 
 Para probar el balanceador de carga, podemos ejecutar desde nuestra máquina anfitrión, la orden:
@@ -77,7 +90,13 @@ curl 192.168.43.198/prueba.html
 
 Tras esto, deberíamos obtener una salida en nuestro terminal como la que podemos ver a continuación:
 
-![haproxy_roundrobin](nginx_roundrobin.png)
+![nginx_roundrobin](nginx_roundrobin.png)
+
+### Probando la configuración con ponderación:
+
+Si volvemos a ejecutar la orden ```curl 192.168.43.198/prueba.html```, tendremos la siguiente salida por nuestro terminal:
+
+![nginx_weight](nginx_weight.png)
 
 ## Configurando un Balanceador de Carga con haproxy
 Para instalar `haproxy` ejecutamos
