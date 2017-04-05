@@ -129,7 +129,7 @@ Después, lanzamos `haproxy` con el siguiente comando:
 $ sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
 ```
 
-Si accedemos desde nuestro navegador a la URL del balanceador (`192.168.0.207`) iremos intercalando entre las páginas de prueba de cada servidor:
+Si accedemos con `curl` a la URL del balanceador (`192.168.0.207`) iremos intercalando entre las páginas de prueba de cada servidor:
 
 ![haproxy_roundrobin](haproxy_roundrobin.png)
 
