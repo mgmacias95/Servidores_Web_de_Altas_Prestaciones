@@ -189,7 +189,7 @@ Para probar nuestra granja web con un balanceador `nginx` con configuración Rou
 ```
 $ ab -n 100000 -c 500 http://192.168.56.104/prueba.html
 ```
-![nginx_haproxy](nginx_haproxy.png)
+![ab_nginx](ab_nginx.png)
 
 ### haproxy
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
