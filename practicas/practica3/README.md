@@ -25,9 +25,9 @@ Una vez instalado e iniciado el servicio, podemos empezar a configurar nuestro b
 # IP's de los servidores finales
 upstream apaches {
     # Maquina principal
-    server 192.168.1.136;
+    server 192.168.56.102;
     # Maquina secundaria 
-    server 192.168.1.139;
+    server 192.168.56.103;
 }
 
 # Configuración del servidor 
@@ -72,9 +72,9 @@ Para realizar esto, sabiendo que alguna de las máquinas finales es más potente
 ```
 upstream apaches {
     # Maquina principal
-    server 192.168.1.136 weight=3; 
+    server 192.168.56.102 weight=3; 
     # Maquina secundaria 
-    server 192.168.1.139;
+    server 192.168.56.103;
 }
 ```
 
@@ -187,8 +187,9 @@ $ pacaur -S apache-tools
 Para probar nuestra granja web con un balanceador `nginx` con configuración Round-Robin, vamos a lanzar 100000 peticiones de 500 en 500 con _apache benchmark_ a nuestro balanceador, pidiendo la página `prueba.html`.
 
 ```
-$ ab -n 100000 -c 500 http://192.168.43.198/prueba.html
+$ ab -n 100000 -c 500 http://192.168.56.104/prueba.html
 ```
+![nginx_haproxy](nginx_haproxy.png)
 
 ### haproxy
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
