@@ -54,3 +54,5 @@ Una vez instalados todos los módulos y herramientas, podemos pasar a configurar
 3. Configurar la red en las máquinas virtuales: una vez creada la red only-host, accedemos a la configuración de nuestra máquina virtual y añadimos un nuevo adaptador de red, que utilice la red only-host que acabamos de crear.
 
 ![paso2](2.png)
+
+Con esto, ya tendremos nuestras máquinas conectadas y podremos acceder por red de una máquina a otra dentro de eduroam.
