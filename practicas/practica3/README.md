@@ -134,7 +134,7 @@ Si accedemos con `curl` a la URL del balanceador (`192.168.0.207`) iremos interc
 ![haproxy_roundrobin](haproxy_roundrobin.png)
 
 ## Configurando un balanceador de carga con Pound
-Para esta parte de la práctica, vamos a seguir [este tutorial](http://www.tecmint.com/setting-up-pound-web-server-load-balancing-in-linux/). 
+Para esta parte de la práctica, vamos a seguir [este tutorial](https://www.linuxhelp.com/how-to-configure-load-balancer-with-pound-in-ubuntu/). 
 
 En primer lugar, instalamos `pound` con el siguiente comando:
 
@@ -142,35 +142,46 @@ En primer lugar, instalamos `pound` con el siguiente comando:
 $ sudo apt install pound
 ```
 
-Una vez instalado, pasamos a editar el archivo de configuración `/etc/pound/pound.cfg`. Debemos tener en cuenta que la IP de la máquina que hará de balanceador es `192.168.0.212` y la de los dos servidores finales son `192.168.0.203` y `192.168.0.204`.
+Una vez instalado, pasamos a editar el archivo de configuración `/etc/pound/pound.cfg`. Debemos tener en cuenta que la IP de la máquina que hará de balanceador es `192.168.56.105` y la de los dos servidores finales son `192.168.56.102` y `192.168.56.103`.
 
 ```
 ListenHTTP
-    Address 192.168.0.212
+    Address 192.168.56.105
     Port    80
 End
 Service
     BackEnd
-        Address 192.168.0.204
+        Address 192.168.56.102
         Port    80
     End
     BackEnd
-        Address 192.168.0.203
+        Address 192.168.56.103
         Port    80
     End
 End
 ```
-
-Por último, debemos arrancar el servicio
+Una vez configurado el fichero de configuración, podemos arrancar el servicio de la siguiente manera:
 
 ```bash
-$ sudo /etc/init.d/pound restart
-
+$ sudo sed -i -e "s/^startup=0/startup=1/" /etc/default/pound 
+$ sudo systemctl start pound
 ```
 
-Si todo ha salido bien, veremos este mensaje:
+A continuación, tenemos que editar el fichero `50-default.conf`, alojado en `/etc/rsyslog.d/50-default.conf`, cambiando la línea `*.*;auth,authpriv.none;local1.none` de la siguiente manera, y añadiendo una nueva a continuación:
 
-![poundstart](poundstart.png)
+```
+*.*;auth,authpriv.none;local1.none              -/var/log/syslog
+local1.*                                        /var/log/pound.log
+```
+
+Tras esto, reiniciamos el servicio
+```bash
+$ sudo systemctl restart rsyslog
+```
+
+y comprobamos si el `pound` funciona, realizando peticiones con `curl`:
+
+![pound](pound.png)
 
 ## Sometiendo la granja web a una carga alta
 ### Instalando `ab` en la máquina anfitriona
