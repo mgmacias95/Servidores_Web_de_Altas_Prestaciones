@@ -184,12 +184,18 @@ $ pacaur -S apache-tools
 
 ### nginx
 
-Para probar nuestra granja web con un balanceador `nginx` con configuración Round-Robin, vamos a lanzar 100000 peticiones de 500 en 500 con _apache benchmark_ a nuestro balanceador, pidiendo la página `prueba.html`.
+Para probar nuestra granja web con un balanceador `nginx` con configuración Round-Robin, vamos a lanzar 99000 peticiones de 500 en 500 con _apache benchmark_ a nuestro balanceador, pidiendo la página `prueba.html`.
 
 ```
-$ ab -n 100000 -c 500 http://192.168.56.104/prueba.html
+$ ab -n 99000 -c 500 http://192.168.56.104/prueba.html
 ```
 ![ab_nginx](ab_nginx.png)
+
+En este caso, hemos realizado 99000 peticiones al servidor, donde ha tardado casi 2 minutos en hacer el test completo. En este caso, han fallado 180 peticiones.
+
+Por segundo, es capaz de atender 908.65 peticiones porsegundo, tardando unos 550ms, a una velocidad de transferencia de 302.40 Kbytes/sec.
+
+La petición más lenta ha tardado 108949 ms, mientras qeu las más rápidas han tardado 95ms.
 
 ### haproxy
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 100000 peticiones haciendo las peticiones de 500 en 500
