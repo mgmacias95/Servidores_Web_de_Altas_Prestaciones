@@ -219,9 +219,15 @@ En hacer las 99000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las
 
 ### pound
 
-Al igual que en los casos anteriores, 
+Al igual que en los casos anteriores, vamos a someter a la granja web con un balanceador pound, a 99000 peticiones de 500 en 500 con `apache-benchmark`.
+
+```bash
+$ ab -n 99000 -c 500 http://192.168.56.105/prueba.html
+```
 
 ![ab_pound](ab_pound.png)
+
+
 
 ### Comparación entre los Balanceadores probados
 
