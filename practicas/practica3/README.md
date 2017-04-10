@@ -200,11 +200,11 @@ $ ab -n 99000 -c 500 http://192.168.56.104/prueba.html
 ```
 ![ab_nginx](ab_nginx.png)
 
-En este caso, hemos realizado 99000 peticiones al servidor, donde ha tardado 57.294 segundos en hacer el test completo, sin peticiones fallidas.
+En este caso, hemos realizado 99000 peticiones al servidor, donde ha tardado 109.041 segundos en hacer el test completo, con 33 peticiones fallidas. Esto quiere decir que el servidor se ha saturado al realizar este test.
 
-Por segundo, es capaz de atender 1727.94 peticiones porsegundo, tardando unos 289.361 ms, a una velocidad de transferencia de 577.11 Kbytes/sec.
+Por segundo, es capaz de atender 907.91 peticiones porsegundo, tardando unos 550.713 ms, a una velocidad de transferencia de 302.31 Kbytes/sec.
 
-La petición más lenta ha tardado 57283 ms, mientras qeu las más rápidas han tardado 95ms.
+La petición más lenta ha tardado 109037 ms, mientras qeu las más rápidas han tardado 96ms.
 
 ### haproxy
 Para poner a prueba nuestro servidor con `haproxy` como balanceador de carga hemos hecho 99000 peticiones haciendo las peticiones de 500 en 500.
@@ -215,7 +215,7 @@ $ ab -n 99000 -c 500 http://192.168.56.101/prueba.html
 
 ![ab_haproxy](ab_haproxy.png)
 
-En hacer las 99000 peticiones (de 500 en 500) se ha tardado un minuto. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido 1776.81 peticiones y cada una ha sido respondida, en media, en 281.403 ms. La petición más lenta ha tardado 32987 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 201 ms.
+En hacer las 99000 peticiones (de 500 en 500) se ha tardado 54.971s. Todas las peticiones se han completado correctamente, lo que quiere decir que nuestro servidor ha sido capaz de responder a todas en un tiempo medianamente razonable. Por segundo se han respondido 1800.95 peticiones y cada una ha sido respondida, en media, en 277.631 ms. La petición más lenta ha tardado 32574 ms en ser respondida mientras que las más rápidas (un 50% de las peticiones), 197 ms.
 
 ### pound
 
@@ -227,14 +227,16 @@ $ ab -n 99000 -c 500 http://192.168.56.105/prueba.html
 
 ![ab_pound](ab_pound.png)
 
+Por último, Pound ha necesitado 107.053 segundos para responder las 99000 peticiones, fallando 178 de las mismas. Por tanto, al igual que _nginx_, el balanceador se ha visto saturado al realizar el test.
 
+Se han atendido 924.78 peticiones por segundo y cada una de ellas se ha respondido en 540.671 ms. La petición más lenta ha tardado 54589 ms mientras que las más rápidas (el 50% de las peticiones) sólo 131ms.
 
 ### Comparación entre los Balanceadores probados
 
-| Balanceador | Tiempo total | Tiempo mínimo | Tiempo máximo | Peticiones fallidas |
-|:-----------:|:------------:|:-------------:|:-------------:|:-------------------:|
-| __nginx__   | 57,294 s     | 49 ms         | 57283 ms      | 0                   |
-| __haproxy__ | 55,718 s     | 201 ms        | 32987 ms      | 0                   |
-| __pound__   | 105,304 s    | x ms          | x ms          | 0                   |
+| Balanceador | Tiempo total | Tiempo mínimo | Tiempo máximo | Peticiones fallidas | Peticiones/segundo | Tiempo/Petición |
+|:-----------:|:------------:|:-------------:|:-------------:|:-------------------:|:------------------:|:---------------:|
+| __nginx__   | 109.041 s    | 96 ms         | 109037 ms     | 33                  | 907.91             | 550.713 ms      |
+| __haproxy__ | 54.971 s     | 197 ms        | 32574 ms      | 0                   | 1800.95            | 277.631 ms      |
+| __pound__   | 107.053 s    | 131 ms        | 54589 ms      | 178                 | 924.78             | 540.671 ms      |
 
-Como se ve en la tabla anterior, tanto _nginx_ como _haproxy_ han sido capaces de soportar la misma carga y en un tiempo bastante parecido (sólo dos segundos de diferencia entre sí). _Nginx_ es más eficiente, pues ha sido capaz de responder el 50% de las peticiones en sólo 49ms mientras que _haproxy_ lo ha hecho en 201ms. Ahora bien, el tiempo máximo de respuesta de _haproxy_  ha sido de 3 segundos mientras que _nginx_ ha necesitado dos segundos más. Por tanto,  podemos decir que la configuración hecha con _haproxy_ es mejor que la que hemos hecho con _nginx_.
+En primer lugar, decir que los test se han realizado con una conexión a internet lenta y, por tanto, puede que los resultados se hayan visto afectados por esta razón. El balanceador que mejor resultado ha dado ha sido _haproxy_, ya que, mientras que _pound_ y _nginx_ se han terminado saturando, _haproxy_ ha podido responder a todas las peticiones correctamente. Además, los tiempos obtenidos por _haproxy_ son muy superiores. Entre _nginx_ y _pound_, el que mejor resultado ha dado ha sido _nginx_, ya que aunque haya respondido la petición más lenta en en 109037ms, ha fallado menos peticiones que _pound_.
