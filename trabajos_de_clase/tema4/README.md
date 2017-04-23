@@ -48,6 +48,14 @@ Y en el caso de que queramos implementar balanceo de carga global, también nos 
 
 __4. Instala y configura en máquina virtual el balanceador *ZenLoadBalancer*__
 
+Para instalar el balanceador, podemos hacer dos cosas, o bien descargarlo desde su repositorio en [GitHub](https://github.com/zevenet) e instalarlo a mano, o descargar la imagen `.iso` de su [página oficial](https://www.zevenet.com/products/community/#repository) o [sourceforge](https://sourceforge.net/projects/zevenet/), como ha sido nuestro caso. En caso de descargarlo a mano, es necesario tener una máquina virtual con _Debian Jessie_ de 32 bits y configurar a mano la IP estática.
+
+Una vez que hemos descargado el archivo .iso, podemos crear una nueva máquina virtual con esta imagen. Una vez arrancada, nos aparecerá la siguiente pantalla:
+
+![zen1](zen1.png)
+
+
+
 ---
 
 __5. Probar los diferentes métodos de redirección HTTP. ¿Cuál es más adecuado y cuál no para hacer balanceo de carga global? ¿Por qué?__
