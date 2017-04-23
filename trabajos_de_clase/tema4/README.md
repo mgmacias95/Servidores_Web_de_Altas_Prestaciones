@@ -56,6 +56,14 @@ __5. Probar los diferentes métodos de redirección HTTP. ¿Cuál es más adecua
 
 __6. Buscar información sobre los bloques de IP para los distintos países y continentes. Implementar en Javascript o PHP la detección de zona desde donde se conecta un usuario.__
 
+La página [___NirSoft___](http://www.nirsoft.net/countryip/) nos da información sobre los bloques de IP asignados a cada país e, incluso, nos da información sobre los bloques IP asignados a cada operador en algunos países.
+
+Para implementar en _Javascript_ la detección de la zona a la que pertenece la IP es necesario recurrir a un servicio externo. En [stackoverflow](http://stackoverflow.com/questions/391979/how-to-get-clients-ip-address-using-javascript-only) podemos encontrar ejemplos de código de cómo implementarlo usando diferentes servicios.
+
+En el caso de PHP, podríamos usar el paquete [__GeoIP__](http://php.net/manual/en/book.geoip.php), en [github](https://github.com/maxmind/geoip-api-php/tree/master/examples) hay ejemplos de código sobre cómo usar este paquete.
+
+En ambos casos, es necesario conocer la IP del cliente, que se encuentra en la [cabecera IP](http://www.freesoft.org/CIE/Course/Section3/7.htm) de la petición que recibimos del mismo. Para conseguirla en php, podemos consultar la variable `$_SERVER['REMOTE_ADDR']` tal y como se ha discutido en [stackoverflow](http://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php).
+
 ---
 
 __7. Buscar información sobre distintos métodos y herramientas para implementar GSLB.__
