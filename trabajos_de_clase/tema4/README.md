@@ -54,7 +54,11 @@ Una vez que hemos descargado el archivo .iso, podemos crear una nueva máquina v
 
 ![zen1](zen1.png)
 
+Tras darle a instalar, comenzará la instalación del sistema, que estará basado en Debian. En esta instalación, es obligatorio establecer una IP estática, una máscara y un _Gateway_ por defecto. 
 
+Al terminar la configuración, podremos iniciar sesión con el usuario `root` y la contraseña que hayamos establecido durante el proceso de instalación.
+
+![zen2](zen2.png)
 
 ---
 
