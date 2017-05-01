@@ -23,16 +23,6 @@ Para construir una imagen se utilizan los denominados [__Dockerfiles__](https://
 
 ![dockerhub](dockerhub.png)
 
-# Clustering de contenedores: Docker Swarm y Kubernetes
-
-## Docker Swarm
-
-Docker Swarm es una herramienta hecha por y para hacer clusters de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
-
-Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro cluster.
-
-## Kubernetes  
-
 ### Capas en un contenedor
 
 ![contenedor](https://www.docker.com/sites/default/files/Container%402x.png)
@@ -44,6 +34,28 @@ Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no sop
 Esto ofrece muchas ventajas, tanto durante la fase de desarrollo de una aplicación como en la de producción. En la fase de desarrollo, podemos usar los contenedores como máquinas de usar y tirar, ya que en ella instalas las librerías que necesitas, tu aplicación, y puedes probarla prácticamente de manera instantánea, y en caso de que esta máquina falle y muera, es tan sencillo como "tirarla a la basura" y ejecutar una nueva.
 
 También se puede modificar estos contenedores modificando el archivo _Dockerfile_ donde podemos definir con unas sencilla reglas, qué hará el contenedor, pudiendo definir contenedores con _Nginx_ y _php_, _Apache_, etc.
+
+# Clustering de contenedores: Docker Swarm y Kubernetes
+
+## Docker Swarm
+
+Docker Swarm es una herramienta hecha por y para hacer clusters de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
+
+Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro cluster.
+
+## Kubernetes  
+
+Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Pero, ¿por qué no usar directamente contenedores Docker? 
+
+1.  Docker no es capaz de ver nada más hayá del host que ejecuta el contenedor. 
+2.  Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.
+3.  Por sí mismo, Docker no es capaz de de manejar y desplegar una gran cantidad de aplicaciones.
+
+Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos entender un poco la terminología que usa:
+
+### Kubernetes Node (antiguos minions)
+
+![minion](https://www.flickr.com/photos/cozinhandofantasias/12909509855/in/photostream/)
 
 # Usando OpenShift para crear y subir aplicaciones
 
