@@ -51,6 +51,8 @@ __OpenShift__ se encuentra dentro del _PaaS_. Esto permite al usuario abstraerse
 
 _OpenShift_ ha sido desarrollado por __Red Hat__ y se basa en ofrecer contenedores __Kubernetes__ con el software que elijamos (django, ruby on rails, etc). Como veremos a continuación, es muy sencillo desplegar aplicaciones en la nube.
 
+![arquitectura](arquitectura_openshift.png)
+
 ## Creando nuestra primera aplicación
 En OpenShift nos ofrecen un [tutorial](https://docs.openshift.com/online/getting_started/basic_walkthrough.html#getting-started-basic-walkthrough) para familiarizarnos con su herramienta. Vamos a seguirlo y a analizar el resultado.
 
