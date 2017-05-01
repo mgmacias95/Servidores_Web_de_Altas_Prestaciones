@@ -55,7 +55,7 @@ Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos 
 
 ### Kubernetes Node (antiguos minions)
 
-![minion](https://www.flickr.com/photos/cozinhandofantasias/12909509855/in/photostream/)
+![minion](https://c1.staticflickr.com/3/2880/12909509855_0640e249dc_b.jpg)
 
 # Usando OpenShift para crear y subir aplicaciones
 
