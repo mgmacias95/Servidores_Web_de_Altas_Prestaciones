@@ -16,6 +16,13 @@ Además, ofrece una solución genial al problema de "esto en mi máquina funcion
 
 Los contenedores también tienen otras ventajas, como el que se ejecutan sobre el espacio de usuario sobre el kernel del SO, permite tener muchas instancias de esa misma máquina ejecutándose a la vez con una sobrecarga menor para la máquina que la que habría en el caso de hacerlo con máquinas virtuales.
 
+## Imágenes docker
+Las [__imágenes__](https://docs.docker.com/glossary/?term=image) son la base de los contenedores. Consisten en un sistema de archivos raíz con un determinado software instalado. Las imágenes no pueden cambiar una vez construidas. Son los [_contenedores_](https://docs.docker.com/glossary/?term=container) los que sí cambian. Un _contenedor_ es una instancia de una imagen.
+
+Para construir una imagen se utilizan los denominados [__Dockerfiles__](https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images). También hay [un repositorio](https://hub.docker.com/explore/) con imágenes listas para descargar.
+
+![dockerhub](dockerhub.png)
+
 # Clustering de contenedores: Docker Swarm y Kubernetes
 
 ## Docker Swarm
