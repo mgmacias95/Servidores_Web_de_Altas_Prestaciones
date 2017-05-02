@@ -63,7 +63,15 @@ Los ___Pods___ o _minions_ son la unidad más básica que puede desplegar Kubern
 
 * __Pods que ejecutan un solo contenedor__: son el caso de uso más común en Kubernetes. En este caso, se puede ver al Pod como una encapsulación del contenedor y de este modo, Kubernetes solo se tiene que encargar de gestionar los Pods.
 
-* __Pods que ejecutan varios contenedores__: puede ser que en algún Pod necesitamos varios contenedores que estén interconectados entre sí. Un ejemplo puede ser que un contenedor actúe como servidor web y otro almacene datos en una base de datos. El Pod hará que ambos contenedores se vean como una sola unidad de trabajo y gestiona la comunicación entre ambos.
+* __Pods que ejecutan varios contenedores__: puede ser que en algún Pod necesitamos varios contenedores que estén interconectados entre sí. Un ejemplo puede ser que un contenedor actúe como servidor web y otro almacene datos en una base de datos. El Pod hará que ambos contenedores se vean como una sola unidad de trabajo y gestiona la comunicación entre ambos. Este caso es un poco más complejo, pero Kubernetes es capaz de llevarlo a cabo.
+
+	Estos contendeores se comunican de forma interna mediante el _localhost_ y a la hora de comunicarse con el exterior, deberán compartir los recursos de red.
+
+![pods](https://kubernetes.io/images/docs/pod.svg)
+
+A la hora de realizar un escalado horizontal, se deben generar varios Pods por cada instancia, lo que se conoce como ___replicado___. Es aquí cuando entra en juego el ___Controlador___ o ___Controller___ que realiza una abstracción sobre los Pods replicados y los gestiona como si fueran una sola unidad.
+
+Para más información, podemos visitar la [página oficial](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/).
 
 # Usando OpenShift para crear y subir aplicaciones
 
