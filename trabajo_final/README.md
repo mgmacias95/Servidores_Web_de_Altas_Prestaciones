@@ -23,6 +23,8 @@ Para construir una imagen se utilizan los denominados [__Dockerfiles__](https://
 
 ![dockerhub](dockerhub.png)
 
+Otra cosa destacada de las imágenes es que pueden ser descargadas ([`docker pull`](https://docs.docker.com/engine/reference/commandline/pull/)) y subidas ([`docker push`](https://docs.docker.com/engine/reference/commandline/push/)) a un repositorio remoto. También pueden tener un control de versiones y etiquetas ([`docker tag`](https://docs.docker.com/engine/reference/commandline/tag/)), como un programa fuente subido a _Github_. Podemos ver las diferencias ([`docker diff`](https://docs.docker.com/engine/reference/commandline/diff/#examples)) entre distintos contenedores para ver cómo difieren de sus imágenes base.
+
 ### Capas en un contenedor
 
 ![contenedor](https://www.docker.com/sites/default/files/Container%402x.png)
