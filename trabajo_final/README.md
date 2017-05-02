@@ -55,9 +55,15 @@ Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sist
 
 Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos entender un poco la terminología que usa:
 
-### Kubernetes Node (antiguos minions)
+### Kubernetes Pods (o minions)
 
 ![minion](https://c1.staticflickr.com/3/2880/12909509855_0640e249dc_b.jpg)
+
+Los ___Pods___ o _minions_ son la unidad más básica que puede desplegar Kubernetes. Un Pod encapsula un aplicación en un contenedor, capaz de almacenar recursos, tener una dirección IP única y opciones de configuración del contenedor. Estos contenedores suelen ser contenedores _Docker_. Existen dos tipos de Pods:
+
+* __Pods que ejecutan un solo contenedor__: son el caso de uso más común en Kubernetes. En este caso, se puede ver al Pod como una encapsulación del contenedor y de este modo, Kubernetes solo se tiene que encargar de gestionar los Pods.
+
+* __Pods que ejecutan varios contenedores__: puede ser que en algún Pod necesitamos varios contenedores que estén interconectados entre sí. Un ejemplo puede ser que un contenedor actúe como servidor web y otro almacene datos en una base de datos. El Pod hará que ambos contenedores se vean como una sola unidad de trabajo y gestiona la comunicación entre ambos.
 
 # Usando OpenShift para crear y subir aplicaciones
 
