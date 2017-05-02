@@ -55,11 +55,11 @@ Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sist
 
 Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos entender un poco la terminología que usa:
 
-### Kubernetes Pods (o minions)
+### Kubernetes Pods y los _minions_
 
 ![minion](https://c1.staticflickr.com/3/2880/12909509855_0640e249dc_b.jpg)
 
-Los ___Pods___ o _minions_ son la unidad más básica que puede desplegar Kubernetes. Un Pod encapsula un aplicación en un contenedor, capaz de almacenar recursos, tener una dirección IP única y opciones de configuración del contenedor. Estos contenedores suelen ser contenedores _Docker_. Existen dos tipos de Pods:
+Los ___Pods___ son la unidad más básica que puede desplegar Kubernetes. Un Pod encapsula un aplicación en un contenedor, capaz de almacenar recursos, tener una dirección IP única y opciones de configuración del contenedor. Estos contenedores suelen ser contenedores _Docker_. Estos contenedores con una aplicación específica se les conoce como los _Kubernetes Nodes_, antes conocidos como _minions_. Existen dos tipos de Pods:
 
 * __Pods que ejecutan un solo contenedor__: son el caso de uso más común en Kubernetes. En este caso, se puede ver al Pod como una encapsulación del contenedor y de este modo, Kubernetes solo se tiene que encargar de gestionar los Pods.
 
@@ -72,6 +72,16 @@ Los ___Pods___ o _minions_ son la unidad más básica que puede desplegar Kubern
 A la hora de realizar un escalado horizontal, se deben generar varios Pods por cada instancia, lo que se conoce como ___replicado___. Es aquí cuando entra en juego el ___Controlador___ o ___Controller___ que realiza una abstracción sobre los Pods replicados y los gestiona como si fueran una sola unidad.
 
 Para más información, podemos visitar la [página oficial](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/).
+
+### Controller
+
+Un _Controller_ se encarga de crear y controlar varios Pods, de replicar los Pods, desplegarlos y mantener el cluster. De hecho, siguiendo la filosofía de los contenedores (usar y tirar), si un nodo muere, automáticamente el Controller lo replica y reemplaza al nodo muerto. Existen tres tipos de Controllers:
+
+* __Deployment__: este tipo de _Controller_ se encarga de darnos la opción de declarar cómo queremos que se desplieguen nuestros pods, declarando el estado en el que queremos que estén, y este controller cambiará el estado actual al estado declarado. Más información [aquí](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+
+* __StatefulSets__: provee a cada Pod una identificación única y nos facilita el escalado de las aplicaciones y su despliegue. Más información [aquí](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
+
+* __DaemonSets__: se encarga de gestionar de que los nodos de nuestro cluster tienen una copia de los pods que hemos creado, ya que conforme vayamos añadiendo nodos al cluster, tendremos que añadirle a estos nodos los pods necesarios. Más información en la [documentación oficial](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
 # Usando OpenShift para crear y subir aplicaciones
 
