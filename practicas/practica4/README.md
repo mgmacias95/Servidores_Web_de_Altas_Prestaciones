@@ -1,6 +1,5 @@
 # Práctica 4: Asegurar la granja web
 
-
 ## Instalar un certificado SSL autofirmado para configurar el acceso por HTTPS
 
 Para generar nuestro certificado SSL, ejecutaremos el comando `a2enmod ssl` y pasarán a activarse una serie de módulos en nuestra máquina. Una vez finalizada la ejecución del comando, tendremos que reiniciar el servicio de `apache2` y crear la carpeta `ssl` en el directorio de Apache donde almacenaremos nuestro certificado SSL.
@@ -33,3 +32,26 @@ Para comprobar que funciona, accederemos a nuestro sitio web y veremos que el ce
 
 ![](self-signed.png)
 
+## Configuración del cortafuegos
+
+Antes de empezar a configurar nuestro cortafuegos con `iptables`, primero veremos el estado del cortafuegos ejecutando la siguiente orden
+
+```bash
+$ iptables -L -n -v
+```
+
+La salida nos muestra el estado del cortafuegos antes de modificar nada, su estado inicial, como se ve en la siguiente imagen:
+
+![](init_iptables.png)
+
+En la imagen podemos ver cómo no hay definida aún ninguna regla, por lo que se acepta todo el tráfico. Una vez comprobado esto, vamos a modificar el cortafuegos para que bloquee todo el tráfico y no acepte ninguno. Para ello, ejecutamos lo siguiente en nuestro terminal:
+
+```bash
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+```
+
+Una vez terminado, comprobamos el estado dle cortafuegos:
+
+![](drop_traffic.png)
