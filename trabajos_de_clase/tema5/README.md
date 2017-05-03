@@ -48,6 +48,6 @@ __Instalar wireshark y observar cómo fluye el tráfico de red en uno de los ser
 
 __3. Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.__
 __Para empezar, podemos comenzar utilizando las clásicas de Linux:__
-	* `top`.
-	* `vmstat`.
-	* `netstat`.
+ * `top`.
+ * `vmstat`.
+ * `netstat`.
