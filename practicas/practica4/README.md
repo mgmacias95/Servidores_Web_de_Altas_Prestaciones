@@ -98,8 +98,8 @@ $ iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
 También podemos permitir el acceso DNS abriendo el puerto 53:
 
 ```bash
-iptables -A INPUT -m state --state NEW -p udp --dport 53-j ACCEPT
-iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
+$ iptables -A INPUT -m state --state NEW -p udp --dport 53-j ACCEPT
+$ iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
 ``` 
 
 ![](accept_dns.png)
@@ -107,8 +107,8 @@ iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
 Y por último, para permitir todo el tráfico tanto de entrada como de salida hacia la máquina de administración, podemos introducir lo siguiente en nuestro shell para configurar el cortafuegos:
 
 ```bash
-iptables -A INPUT -s 192.168.0.201 -j ACCEPT
-iptables -A OUTPUT -s 192.168.0.201 -j ACCEPT
+$ iptables -A INPUT -s 192.168.0.201 -j ACCEPT
+$ iptables -A OUTPUT -s 192.168.0.201 -j ACCEPT
 ```
 
 Finalmente, nuestro cortafuegos debe quedar como vemos en la siguiente imagen:
