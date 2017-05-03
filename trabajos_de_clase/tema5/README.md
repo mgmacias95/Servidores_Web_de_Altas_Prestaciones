@@ -43,8 +43,8 @@ Allow from .foo.com
 </Location>
 ```
 
-__2. Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj.__
-__Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP. __
+__2. Revisar los análisis de tráfico que se ofrecen en:__ http://bit.ly/1g0dkKj.
+__Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP.__
 
 __3. Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.__
 __Para empezar, podemos comenzar utilizando las clásicas de Linux:__
