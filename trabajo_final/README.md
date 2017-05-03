@@ -83,6 +83,10 @@ Un _Controller_ se encarga de crear y controlar varios Pods, de replicar los Pod
 
 * __DaemonSets__: se encarga de gestionar de que los nodos de nuestro cluster tienen una copia de los pods que hemos creado, ya que conforme vayamos añadiendo nodos al cluster, tendremos que añadirle a estos nodos los pods necesarios. Más información en la [documentación oficial](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
+### _kube-proxy_
+
+_kube-proxy_ es el proxy de red de Kubernetes, que está peresente en cada uno de los nodos del cluster, y podemos configurarlo en función de los servicios que vaya a dar cada uno de los nodos. Además de esto, nos provee de un DNS para nuestro cluster, para poder asignar las IPs.
+
 # Usando OpenShift para crear y subir aplicaciones
 
 ## ¿Qué es OpenShift?
