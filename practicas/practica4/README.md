@@ -55,3 +55,42 @@ iptables -P FORWARD DROP
 Una vez terminado, comprobamos el estado dle cortafuegos:
 
 ![](drop_traffic.png)
+
+En el caso de bloquear el tráfico de entrada y permitir el de salida, ejecutamos lo siguiente: 
+
+```bash
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT ACCEPT
+iptables -A INPUT -m state --state NEW, ESTABLISHED -j ACCEPT 
+```
+
+Y mostramos el estado del cortafuegos:
+
+![](block_input_traffic.png)
+
+Además de esto, podemos bloquear también el tráfico ICMP para evitar ataques mediante `ping` con la siguiente orden:
+
+```bash
+$ iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+```
+
+![](block_icmp.png)
+
+También podemos permitir el tráfico por SSH, si queremos administrar la máquina de forma remota, abriendo el puerto 22 de nuestro cortafuegos:
+
+```bash
+$ iptables -A INPUT -p tcp --dport22 -j ACCEPT
+$ iptables -A OUTPUT -p udp --sport22 -j ACCEPT
+```
+
+![](accept_ssh.png)
+
+De igual forma, permitimos el tráfico HTTP y HTTPS abriendo el puerto 80 y 443 respectivamente para que nuestro servidor web pueda servir las páginas.
+
+```bash
+$ iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
+$ iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
+```
+
+![](accept_http.png)
