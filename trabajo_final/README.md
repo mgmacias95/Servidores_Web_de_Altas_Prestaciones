@@ -93,6 +93,8 @@ _kube-proxy_ es el proxy de red de Kubernetes, que está peresente en cada uno d
 
 Kubernetes nos ofrece la posiblidad de manejar nuestro clúster de una forma muy cómodo, ya que automatiza una gran cantidad de tareas como son la creación de nuevas instancias para escalar nuestras aplicaciones, monitorización, la forma de desplegar nuestras aplicaciones, etc. Simplemente tenemos que declarar cómo queremos hacer estas tareas mediante ficheros _YAML_.
 
+También nos ofrece balanceo de carga, en caso de que un contenedor falle, es capaz de tirarlo y crear uno nuevo, para seguir funcionando, se encarga de administrar nuestro almacenamiento, ya sea en local o en un servicio externo en la nube, etc.
+
 Kubernetes, comparado con el orquestador de contenedores DockerSwarn, no está obligado a usar siempre contenedores Docker, lo que nos permite una mayor flexibilidad en nuestro trabajo que DockerSwarm, ya que podemos usar otras alternativas y no estar atados por las limitaciones de la API de Docker. Además de esto, Kubernetes se puede usar para administrar cualquier tipo de clúster, ya sea un clúster de contenedores o bien, un clúster tradicional o una composición de ambos. 
 
 Esto en parte es lo que hace más complicada la configuración de Kubernetes. Al haber tantos escenarios posibles, realizar una configuración correcta para nuestro clúster puede ser algo más difícil que por ejemplo, DockerSwarm. Aunque, esto no tiene porque ser exactamente así, ya que existen plataformas con AWS, Google Cloud, u OpenShift, donde Kubernetes ya viene configurado y sólo nos tenemos que preocupar de desarrollar y desplegar nuestra aplicación.
