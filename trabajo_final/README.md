@@ -37,17 +37,19 @@ Esto ofrece muchas ventajas, tanto durante la fase de desarrollo de una aplicaci
 
 También se puede modificar estos contenedores modificando el archivo _Dockerfile_ donde podemos definir con unas sencilla reglas, qué hará el contenedor, pudiendo definir contenedores con _Nginx_ y _php_, _Apache_, etc.
 
-# Clustering de contenedores: Docker Swarm y Kubernetes
+# clústering de contenedores: Docker Swarm y Kubernetes
 
 ## Docker Swarm
 
-Docker Swarm es una herramienta hecha por y para hacer clusters de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
+Docker Swarm es una herramienta hecha por y para hacer clústers de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
 
-Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro cluster.
+Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro clúster.
 
 ## Kubernetes  
 
-Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Pero, ¿por qué no usar directamente contenedores Docker? 
+![kubernetes](https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png)
+
+Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Además de esto, fue desarrollado por Google y escrito en _Go_. Pero, ¿por qué no usar directamente contenedores Docker? 
 
 1.  Docker no es capaz de ver nada más hayá del host que ejecuta el contenedor. 
 2.  Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.
@@ -75,17 +77,25 @@ Para más información, podemos visitar la [página oficial](https://kubernetes.
 
 ### Controller
 
-Un _Controller_ se encarga de crear y controlar varios Pods, de replicar los Pods, desplegarlos y mantener el cluster. De hecho, siguiendo la filosofía de los contenedores (usar y tirar), si un nodo muere, automáticamente el Controller lo replica y reemplaza al nodo muerto. Existen tres tipos de Controllers:
+Un _Controller_ se encarga de crear y controlar varios Pods, de replicar los Pods, desplegarlos y mantener el clúster. De hecho, siguiendo la filosofía de los contenedores (usar y tirar), si un nodo muere, automáticamente el Controller lo replica y reemplaza al nodo muerto. Existen tres tipos de Controllers:
 
 * __Deployment__: este tipo de _Controller_ se encarga de darnos la opción de declarar cómo queremos que se desplieguen nuestros pods, declarando el estado en el que queremos que estén, y este controller cambiará el estado actual al estado declarado. Más información [aquí](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
 
 * __StatefulSets__: provee a cada Pod una identificación única y nos facilita el escalado de las aplicaciones y su despliegue. Más información [aquí](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/).
 
-* __DaemonSets__: se encarga de gestionar de que los nodos de nuestro cluster tienen una copia de los pods que hemos creado, ya que conforme vayamos añadiendo nodos al cluster, tendremos que añadirle a estos nodos los pods necesarios. Más información en la [documentación oficial](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
+* __DaemonSets__: se encarga de gestionar de que los nodos de nuestro clúster tienen una copia de los pods que hemos creado, ya que conforme vayamos añadiendo nodos al clúster, tendremos que añadirle a estos nodos los pods necesarios. Más información en la [documentación oficial](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/).
 
 ### _kube-proxy_
 
-_kube-proxy_ es el proxy de red de Kubernetes, que está peresente en cada uno de los nodos del cluster, y podemos configurarlo en función de los servicios que vaya a dar cada uno de los nodos. Además de esto, nos provee de un DNS para nuestro cluster, para poder asignar las IPs.
+_kube-proxy_ es el proxy de red de Kubernetes, que está peresente en cada uno de los nodos del clúster, y podemos configurarlo en función de los servicios que vaya a dar cada uno de los nodos. Además de esto, nos provee de un DNS para nuestro clúster, para poder asignar las IPs.
+
+## El poder de Kubernetes
+
+Kubernetes nos ofrece la posiblidad de manejar nuestro clúster de una forma muy cómodo, ya que automatiza una gran cantidad de tareas como son la creación de nuevas instancias para escalar nuestras aplicaciones, monitorización, la forma de desplegar nuestras aplicaciones, etc. Simplemente tenemos que declarar cómo queremos hacer estas tareas mediante ficheros _YAML_.
+
+Kubernetes, comparado con el orquestador de contenedores DockerSwarn, no está obligado a usar siempre contenedores Docker, lo que nos permite una mayor flexibilidad en nuestro trabajo que DockerSwarm, ya que podemos usar otras alternativas y no estar atados por las limitaciones de la API de Docker. Además de esto, Kubernetes se puede usar para administrar cualquier tipo de clúster, ya sea un clúster de contenedores o bien, un clúster tradicional o una composición de ambos. 
+
+Esto en parte es lo que hace más complicada la configuración de Kubernetes. Al haber tantos escenarios posibles, realizar una configuración correcta para nuestro clúster puede ser algo más difícil que por ejemplo, DockerSwarm. Aunque, esto no tiene porque ser exactamente así, ya que existen plataformas con AWS, Google Cloud, u OpenShift, donde Kubernetes ya viene configurado y sólo nos tenemos que preocupar de desarrollar y desplegar nuestra aplicación.
 
 # Usando OpenShift para crear y subir aplicaciones
 
