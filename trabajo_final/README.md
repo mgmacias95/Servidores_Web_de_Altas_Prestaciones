@@ -37,7 +37,7 @@ Esto ofrece muchas ventajas, tanto durante la fase de desarrollo de una aplicaci
 
 También se puede modificar estos contenedores modificando el archivo _Dockerfile_ donde podemos definir con unas sencilla reglas, qué hará el contenedor, pudiendo definir contenedores con _Nginx_ y _php_, _Apache_, etc.
 
-# clústering de contenedores: Docker Swarm y Kubernetes
+# Clústering de contenedores: Docker Swarm y Kubernetes
 
 ## Docker Swarm
 
