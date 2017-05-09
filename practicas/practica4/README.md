@@ -6,8 +6,8 @@ Para generar nuestro certificado SSL, ejecutaremos el comando `a2enmod ssl` y pa
 
 Una vez hecho esto, generamos nuestro certificado SSL introduciendo la siguiente orden en nuestro terminal:
 
-```bash
-$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout 
+```
+# openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout 
   /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 ```
 
@@ -36,8 +36,8 @@ Para comprobar que funciona, accederemos a nuestro sitio web y veremos que el ce
 
 Antes de empezar a configurar nuestro cortafuegos con `iptables`, primero veremos el estado del cortafuegos ejecutando la siguiente orden
 
-```bash
-$ iptables -L -n -v
+```
+# iptables -L -n -v
 ```
 
 La salida nos muestra el estado del cortafuegos antes de modificar nada, su estado inicial, como se ve en la siguiente imagen:
@@ -46,23 +46,23 @@ La salida nos muestra el estado del cortafuegos antes de modificar nada, su esta
 
 En la imagen podemos ver cómo no hay definida aún ninguna regla, por lo que se acepta todo el tráfico. Una vez comprobado esto, vamos a modificar el cortafuegos para que bloquee todo el tráfico y no acepte ninguno. Para ello, ejecutamos lo siguiente en nuestro terminal:
 
-```bash
-iptables -P INPUT DROP
-iptables -P OUTPUT DROP
-iptables -P FORWARD DROP
+```
+# iptables -P INPUT DROP
+# iptables -P OUTPUT DROP
+# iptables -P FORWARD DROP
 ```
 
-Una vez terminado, comprobamos el estado dle cortafuegos:
+Una vez terminado, comprobamos el estado del cortafuegos:
 
 ![](drop_traffic.png)
 
 En el caso de bloquear el tráfico de entrada y permitir el de salida, ejecutamos lo siguiente: 
 
-```bash
-$ iptables -P INPUT DROP
-$ iptables -P FORWARD DROP
-$ iptables -P OUTPUT ACCEPT
-$ iptables -A INPUT -m state --state NEW, ESTABLISHED -j ACCEPT 
+```
+# iptables -P INPUT DROP
+# iptables -P FORWARD DROP
+# iptables -P OUTPUT ACCEPT
+# iptables -A INPUT -m state --state NEW, ESTABLISHED -j ACCEPT 
 ```
 
 Y mostramos el estado del cortafuegos:
@@ -71,51 +71,60 @@ Y mostramos el estado del cortafuegos:
 
 Además de esto, podemos bloquear también el tráfico ICMP para evitar ataques mediante `ping` con la siguiente orden:
 
-```bash
-$ iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+```
+# iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 ```
 
 ![](block_icmp.png)
 
 También podemos permitir el tráfico por SSH, si queremos administrar la máquina de forma remota, abriendo el puerto 22 de nuestro cortafuegos:
 
-```bash
-$ iptables -A INPUT -p tcp --dport22 -j ACCEPT
-$ iptables -A OUTPUT -p udp --sport22 -j ACCEPT
+```
+# iptables -A INPUT -p tcp --dport22 -j ACCEPT
+# iptables -A OUTPUT -p udp --sport22 -j ACCEPT
 ```
 
 ![](accept_ssh.png)
 
 De igual forma, permitimos el tráfico HTTP y HTTPS abriendo el puerto 80 y 443 respectivamente para que nuestro servidor web pueda servir las páginas.
 
-```bash
-$ iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
-$ iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
+```
+# iptables -A INPUT -m state --state NEW -p tcp --dport 80 -j ACCEPT
+# iptables -A INPUT -m state --state NEW -p tcp --dport 443 -j ACCEPT
 ```
 
 ![](accept_http.png)
 
 También podemos permitir el acceso DNS abriendo el puerto 53:
 
-```bash
-$ iptables -A INPUT -m state --state NEW -p udp --dport 53-j ACCEPT
-$ iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
+```
+# iptables -A INPUT -m state --state NEW -p udp --dport 53-j ACCEPT
+# iptables -A INPUT -m state --state NEW -p tcp --dport 53 -j ACCEPT
 ``` 
 
 ![](accept_dns.png)
 
 Y por último, para permitir todo el tráfico tanto de entrada como de salida hacia la máquina de administración, podemos introducir lo siguiente en nuestro shell para configurar el cortafuegos:
 
-```bash
-$ iptables -A INPUT -s 192.168.0.201 -j ACCEPT
-$ iptables -A OUTPUT -s 192.168.0.201 -j ACCEPT
+```
+# iptables -A INPUT -s 192.168.0.201 -j ACCEPT
+# iptables -A OUTPUT -s 192.168.0.201 -j ACCEPT
 ```
 
 Finalmente, nuestro cortafuegos debe quedar como vemos en la siguiente imagen:
 
 ![](accept_admin.png)
 
-### Creación de una máquina cortafuegos
+### Script para configurar iptables que se ejecuta al arrancar
+Para automatizar toda la configuración de `iptables` que hemos hecho, podemos hacer un script como el siguiente:
+
+![](iptables_script.png)
+
+Para que dicho script se ejecute nada más arrancar la máquina virtual, sólo debemos añadir la siguiente regla al crontab:
+
+![](enable_script_boot.png)
+
+## Creación de una máquina cortafuegos
 
 Esta máquina cortafuegos, será una nueva máquina $M_4$, que irá justo delante del balanceador de carga, que se encargará de filtrar todo el tráfico y pasarle sólo a la máquina balanceadore el tráfico HTTP y HTTPS. 
 
