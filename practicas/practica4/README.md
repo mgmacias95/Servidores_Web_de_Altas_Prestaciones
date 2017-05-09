@@ -145,7 +145,7 @@ y para activar los cambios ejecutamos la siguiente orden:
 ```
  sysctl -p /etc/sysctl.conf 
 ```
-Una vez hemos activado el _IP Forwading_, debemos añadir a la configuración de `iptables` que hicimos en el ejercicio anterior las reglas que permitan redirigir el tráfico de la máquina _Firewall_ al balanceador de carga:
+Una vez hemos activado el _IP Forwading_, debemos añadir a la configuración de `iptables` que hicimos en el ejercicio anterior las [reglas](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-firewall-ipt-fwd.html) que permitan redirigir el tráfico de la máquina _Firewall_ al balanceador de carga:
 
 ```
 iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination <ip_balanceador>
