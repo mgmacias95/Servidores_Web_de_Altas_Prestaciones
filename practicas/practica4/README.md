@@ -52,7 +52,7 @@ En la imagen podemos ver cómo no hay definida aún ninguna regla, por lo que se
 # iptables -P FORWARD DROP
 ```
 
-Una vez terminado, comprobamos el estado dle cortafuegos:
+Una vez terminado, comprobamos el estado del cortafuegos:
 
 ![](drop_traffic.png)
 
@@ -114,3 +114,12 @@ Y por último, para permitir todo el tráfico tanto de entrada como de salida ha
 Finalmente, nuestro cortafuegos debe quedar como vemos en la siguiente imagen:
 
 ![](accept_admin.png)
+
+### Script para configurar iptables que se ejecuta al arrancar
+Para automatizar toda la configuración de `iptables` que hemos hecho, podemos hacer un script como el siguiente:
+
+![](iptables_script.png)
+
+Para que dicho script se ejecute nada más arrancar la máquina virtual, sólo debemos añadir la siguiente regla al crontab:
+
+![](enable_script_boot.png)
