@@ -48,6 +48,11 @@ __Instalar wireshark y observar cómo fluye el tráfico de red en uno de los ser
 
 __3. Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.__
 __Para empezar, podemos comenzar utilizando las clásicas de Linux:__
- * `top`.
- * `vmstat`.
- * `netstat`.
+ * ___top___.
+ * ___vmstat___.
+ * ___netstat___.
+
+* `top`: esta herramienta nos ofrece un monitor en tiempo real sobre las características del sistema. La pantalla que muestra por defecto al ejecutar la orden es un monitor general del estado de nuestra máquina. En función de los parámetros que introduzcamos, podemos cambiar la pantalla de monitorización de `top`. Estos comandos los podemos ver ejecutando `man top` o bien acceder a https://linux.die.net/man/1/top.
+
+* `vmstat`: _vmstat_ (_virtual memory statistics_) nos ofrece información sobre los procesos en ejecución, del estado de la memoria, paginación, etc. dependiendo de la opción que introduzcamos. Estas opciones, al igual que antes están disponibles en el man o en https://linux.die.net/man/8/vmstat.
+

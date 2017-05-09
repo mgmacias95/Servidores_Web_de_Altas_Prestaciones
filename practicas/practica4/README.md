@@ -114,3 +114,25 @@ $ iptables -A OUTPUT -s 192.168.0.201 -j ACCEPT
 Finalmente, nuestro cortafuegos debe quedar como vemos en la siguiente imagen:
 
 ![](accept_admin.png)
+
+### Creación de una máquina cortafuegos
+
+Esta máquina cortafuegos, será una nueva máquina $M_4$, que irá justo delante del balanceador de carga, que se encargará de filtrar todo el tráfico y pasarle sólo a la máquina balanceadore el tráfico HTTP y HTTPS. 
+
+Una vez creada la máquina _firewall_, pasaremos a la configuración del firewall y del _enrutamiento de IPs_ (_IP forwarding_), que redirige el tráfico filtrado de la máquina firewall a la máquina balanceadora. Para configurar el firewall, usaremos `iptables` y el script desarrollado anteriormente para realizar una configuración automática.
+
+Además de esto, tenemos que activar el parámetro del kernel `pv4.ip_forward` poniéndolo a 1 para que se pueda redireccionar el tráfico. Esto se puede hacer con la orden: 
+
+```
+sysctl -w net.ipv4.ip_forward=1
+```
+
+y para que cuando apaguemos la máquina se mantengan los cambios, en el fichero `/etc/sysctl.conf ` cambiamos el valor de la siguiente línea a 1: 
+```
+net.ipv4.ip_forward = 0
+```
+y para activar los cambios ejecutamos la siguiente orden:
+
+```
+ sysctl -p /etc/sysctl.conf 
+```
