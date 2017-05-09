@@ -145,3 +145,19 @@ y para activar los cambios ejecutamos la siguiente orden:
 ```
  sysctl -p /etc/sysctl.conf 
 ```
+Una vez hemos activado el _IP Forwading_, debemos añadir a la configuración de `iptables` que hicimos en el ejercicio anterior las reglas que permitan redirigir el tráfico de la máquina _Firewall_ al balanceador de carga:
+
+```
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination <ip_balanceador>
+iptables -A FORWARD --in-interface enp0s8 -j ACCEPT
+iptables -t nat -A POSTROUTING --out-interface enp0s8 -j MASQUERADE
+```
+
+Con estas reglas añadidas, la configuración `iptables` final en nuestra máquina _firewall_ sería:
+
+![](iptables_rules.png)
+
+Si hacemos una petición HTTP a la máquina firewall, vemos que reenvía el tráfico correctamente a la máquina balanceadora.
+
+![](independent_firewall.png)
+
