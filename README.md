@@ -41,6 +41,8 @@ También se puede modificar estos contenedores modificando el archivo _Dockerfil
 
 ## Docker Swarm
 
+![dockerswarn](https://raw.githubusercontent.com/docker/swarm/master/logo.png)
+
 Docker Swarm es una herramienta hecha por y para hacer clústers de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
 
 Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro clúster.
