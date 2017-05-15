@@ -158,7 +158,7 @@ Si queremos que cada cambio que subamos a github se sincronice automáticamente 
 
 2. En la pestaña _Settings_ de nuestro proyecto de Github, acceder a _Webhooks & Services_ y copiar la URL en el campo __Payload URL__.
 
-    ![webhooks](webhooks.png)
+    ![webhooks](webhook.png)
 
 
 ### Usando la herramienta `oc`
