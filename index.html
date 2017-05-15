@@ -29,7 +29,7 @@
 			<div class="slides">
 				<section>
 					<h2>Kubernetes</h2>
-					<h3>y computación cloud.</h3>
+					<h3>y computación cloud</h3>
 					<p>Marta Gómez y Braulio Vargas</p>
 					<p style="margin-top: 5%">
 			      			<a href="https://twitter.com/Mrs_DarkDonado" style="float:left; color:#0D86FF"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i> @Mrs_DarkDonado</a>
@@ -58,8 +58,150 @@
                     </div>
                     <div style="clear: both;"></div>
 				</section>
+                <section>
+                    <h3>Índice</h3>
+                    <ul class="fragments">
+                        <li class="fragment">Docker y los contenedores.</li>
+                        <ul class="fragments">
+                            <li class="fragment">Qué es un contenedor.</li>
+                            <li class="fragment">Imágenes docker.</li>
+                            <li class="fragment">Capas en un contenedor.</li>
+                            <li class="fragment">Capas en una máquina virtual.</li>
+                        </ul>
+                        <li class="fragment">Clústering de contenedores: Dockerswarm y Kubernetes.</li>
+                        <ul class="fragments">
+                            <li class="fragment">Docker swarm.</li>
+                            <li class="fragment">Kubernetes.</li>
+                        </ul>
+                        <li class="fragment">Terminología de Kubernetes.</li>
+                        <li class="fragment">Usando OpenShift para crear y subir aplicaciones.</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>Docker y los contenedores</h2>
+                    </section>
+                    <section>
+                        <h3>Qué es un contenedor</h3>
+                        <img src="https://camo.githubusercontent.com/287429d04b567241b85594ad7ad9a7945a5b3a16/68747470733a2f2f7777772e646f636b65722e636f6d2f73697465732f64656661756c742f66696c65732f776861745f69735f615f636f6e7461696e65722e706e67">
+                    </section>
+                    <section>
+                        <h3>Imágenes Docker</h3>
+                        <img src="dockerhub.png">
+                    </section>
+                    <section>
+                        <h3>Capas en un contenedor</h3>
+                        <img src="https://camo.githubusercontent.com/3aab39d1856cacd89f499e8b893130815a087b28/68747470733a2f2f7777772e646f636b65722e636f6d2f73697465732f64656661756c742f66696c65732f436f6e7461696e657225343032782e706e67" style="height: 500px;">
+                    </section>
+                    <section>
+                        <h3>Capas en una máquina virtual</h3>
+                        <img src="https://camo.githubusercontent.com/33f29eefc2f72ef5011d441aef3695fa3870fb47/68747470733a2f2f7777772e646f636b65722e636f6d2f73697465732f64656661756c742f66696c65732f564d25343032782e706e67" style="height: 500px;">
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Clústering y contenedores: Docker Swarm y Kubernetes</h2>
+                    </section>
+                    <section>
+                        <h3>Docker Swarm</h3>
+                        <ul class="fragments">
+                            <li class="fragment">Hecha para hacer clústers de contenedores Docker.</li>
+                            <li class="fragment">Trabaja con la misma API que Docker.</li>
+                            <li class="fragment">Presenta las mismas desventajas que Docker.</li>
+                            <li class="fragment">En caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro clúster.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Kubernetes</h3>
+                        <div style="width: 100%">
+                            <div style="float: left; width: 30%">
+                                <img src="https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png">
+                            </div>
+                            <div style="float: right; width: 70%">
+                                <ul class="fragments">
+                                    <li class="fragment">Orquestador de contenedores (Docker).</li>
+                                    <li class="fragment">Desarrollado por Google.</li>
+                                    <li class="fragment">Escrito en Go.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>¿Por qué no usar directamente contendores Docker?</h3>
+                        <ul class="fragments">
+                            <li class="fragment">Docker no es capaz de ver nada más allá del host que ejecuta el contenedor.</li>
+                            <li class="fragment">Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.</li>
+                            <li class="fragment">Por sí mismo, Docker no es capaz de manejar y desplegar una gran cantidad de aplicaciones.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Terminología de Kubernetes</h2>
+                    </section>
+                    <section>
+                        <h3>Kubernetes Pods y los minions.</h3>
+                    </section>
+                    <section data-background="https://camo.githubusercontent.com/ecbfeb0d1f93786d53f976aed502aba09336245f/68747470733a2f2f63312e737461746963666c69636b722e636f6d2f332f323838302f31323930393530393835355f303634306532343964635f622e6a7067" data-background-transtition="zoom">
+                    </section>
+                    <section>
+                        <h3>Kubernetes Pods y los minions.</h3>
+                        <p>Los <b>Pods</b> son la unidad más básica que puede desplegar Kubernetes. Encapsula una aplicación en un contendor (Docker).</p>
+
+                        <p>Estos contenedores con una aplicación específica se conocen como <b>Kubernetes nodes</b>, antes conocidos como <b>minions</b>.</p>
+
+                        <p>Hay dos tipos: los que <b>ejecutan un único contenedor</b> y los que <b>ejecutan varios contenedores.</b></p>
+                    </section>
+                    <section>
+                        <h3>Pods que ejecutan varios contenedores</h3>
+                        <img src="https://camo.githubusercontent.com/d4532e2280a9c4779d818b11337c6bf0d34e1871/68747470733a2f2f6b756265726e657465732e696f2f696d616765732f646f63732f706f642e737667" style="height: 500px">
+                    </section>
+                    <section>
+                        <h3>Controller</h3>
+                        <p>Se encarga de crear y controlar varios Pods, de replicarlos, desplegarlos y mantener el clúster. Hay tres tipos:</p>
+                        <ul class="fragments">
+                            <li class="fragment">Deployment.</li>
+                            <li class="fragment">StatefulSets.</li>
+                            <li class="fragment">DaemonSets.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Kube-proxy</h3>
+                        <p>Es el proxy de red de Kubernetes, está presente en cada uno de los nodos del clúster y podemos configurarlo en función de los servicios que vaya a dar cada uno de los nodos. Provee un DNS para nuestro clúster.</p>
+                    </section>
+                    <section>
+                        <h3>El poder de Kubernetes</h3>
+                        <ul class="fragments">
+                            <li class="fragment">Automatiza una gran cantidad de tareas.</li>
+                            <li class="fragment">Ofrece balanceo de carga y administra el almacenamiento.</li>
+                            <li class="fragment">No está obligado a usar contenedores Docker (flexibilidad).</li>
+                            <li class="fragment">Se puede usar para administrar clústers, aunque no sean de contenedores.</li>
+                            <li class="fragment">Tiene una configuración complicada.</li>
+                            <li class="fragment">Usado en una gran cantidad de plataformas  cloud, como por ejemplo <b>OpenShift</b>.</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Usando OpenShift para crear y subir aplicaciones</h2>
+                    </section>
+                    <section>
+                        <h3>Tipos de servicios cloud</h3>
+                        <ul class="fragments">
+                            <li class="fragment">Software as a service.</li>
+                            <li class="fragment">Infrastructure as a service.</li>
+                            <li class="fragment">Platform as a service.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>¿Qué es OpenShift?</h3>
+                        <p><b>OpenShift</b> se encuentra dentro del <i>PaaS</i>. Nos abstrae del hardware y SO subyacente y nos permite centrarnos en el desarrollo de nuestra aplicación. Soporta los framework más populares y es software libre.</p>
+                        <p>Ha sido desarrollado por <b>Red Hat</b> y se basa en ofrecer contenedores <b>Kubernetes</b> con un software preinstalado.</p>
+                    </section>
+                    <section data-background="arquitectura_openshift.png"></section>
+                </section>
 			</div>
-		</div>
+        </div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
