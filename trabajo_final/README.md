@@ -12,7 +12,7 @@ Un contenedor es, por decirlo de una manera, una simplificación de la virtualiz
 
 ![docker](https://www.docker.com/sites/default/files/what_is_a_container.png)
 
-Además, ofrece una solución genial al problema de "esto en mi máquina funciona, no sé por qué en la tuya no", ya que el contenedor es independiente al hardware y software que haya instalado en la máquina anfitriona.
+Además, ofrece una solución genial al problema de "esto en mi máquina funciona, no sé por qué en la tuya no", ya que el contenedor es independiente al hardware y software que allá instalado en la máquina anfitriona.
 
 Los contenedores también tienen otras ventajas, como el que se ejecutan sobre el espacio de usuario sobre el kernel del SO, permite tener muchas instancias de esa misma máquina ejecutándose a la vez con una sobrecarga menor para la máquina que la que habría en el caso de hacerlo con máquinas virtuales.
 
