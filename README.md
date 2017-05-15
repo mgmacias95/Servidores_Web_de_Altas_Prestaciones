@@ -18,5 +18,7 @@ Actualmente tenemos que
 - [x] Hacer práctica 2.
 - [x] Hacer práctica 3
 - [ ] Hacer ejercicios tema 4
-- [ ] Hacer práctica 4
+- [x] Hacer práctica 4
 - [ ] Hacer ejercicios tema 5
+- [ ] Hacer práctica 5
+- [ ] Hacer ejercicios tema 6
