@@ -41,6 +41,8 @@ También se puede modificar estos contenedores modificando el archivo _Dockerfil
 
 ## Docker Swarm
 
+![dockerswarn](https://raw.githubusercontent.com/docker/swarm/master/logo.png)
+
 Docker Swarm es una herramienta hecha por y para hacer clústers de contenedores Docker, usando la misma API que Docker y que funciona directamente con este tipo de contenedores. Esto ofrece las ventajas de trabajar con la misma API que Docker, no que nos permite trabajar de forma muy rápida y cómoda, ya que no hay que adaptarse a un nuevo entorno, pero, tiene las mismas desventajas que tiene Docker.
 
 Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no soporte algo, ese algo no podrá ser instalado en todo nuestro clúster.
@@ -51,7 +53,7 @@ Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no sop
 
 Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Además de esto, fue desarrollado por Google y escrito en _Go_. Pero, ¿por qué no usar directamente contenedores Docker? 
 
-1.  Docker no es capaz de ver nada más hayá del host que ejecuta el contenedor. 
+1.  Docker no es capaz de ver nada más allá del host que ejecuta el contenedor. 
 2.  Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.
 3.  Por sí mismo, Docker no es capaz de de manejar y desplegar una gran cantidad de aplicaciones.
 
