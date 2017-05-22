@@ -85,3 +85,7 @@ Para poder automatizar este proceso, podemos realizar una configuración __maest
 9. Con esto, ya habrá concluido la configuración maestro-esclavo. Si añadimos un dato al master, este cambio se verá reflejado en el esclavo:
 
     ![](FUNCIONA.png)
+    
+## Configuración Maestro-Maestro
+
+Basándonos en los pasos reflejados en el [tutorial de DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication), los pasos para hacer una configuración __maestro-maestro__ son:
