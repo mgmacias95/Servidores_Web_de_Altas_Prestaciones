@@ -89,3 +89,27 @@ Para poder automatizar este proceso, podemos realizar una configuración __maest
 ## Configuración Maestro-Maestro
 
 Basándonos en los pasos reflejados en el [tutorial de DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication), los pasos para hacer una configuración __maestro-maestro__ son:
+
+En primer lugar, debemos modificar los archivos de configuración de ambos servidores y cambiar el parámetro `binlog_do_db` para compartir la base de datos de contactos que creamos previamente.
+
+![](16.png)
+
+![](18.png)
+
+Una vez hecho eso, reiniciamos el servicio en ambos servidores.
+
+Después, creamos un usuario `replicator` para que el otro servidor maestro pueda acceder a la base de datos.
+
+![](17.png)
+
+![](19.png)
+
+A continuación, configuramos el otro servidor como maestro con el comando `CHANGE MASTER`. Es importante parar el esclavo previamente con `STOP SLAVE` y, después, volver a arrancarlo.
+
+![](20.png)
+
+![](21.png)
+
+Por último, añadimos datos desde ambos maestros y comprobamos que la modificación se ve reflejada en el otro servidor:
+
+![](funciona2.png)
