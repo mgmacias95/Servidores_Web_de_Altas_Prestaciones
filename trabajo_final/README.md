@@ -55,7 +55,7 @@ Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sist
 
 1.  Docker no es capaz de ver nada más allá del host que ejecuta el contenedor. 
 2.  Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.
-3.  Por sí mismo, Docker no es capaz de de manejar y desplegar una gran cantidad de aplicaciones.
+3.  Por sí mismo, Docker no es capaz de manejar y desplegar una gran cantidad de aplicaciones.
 
 Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos entender un poco la terminología que usa:
 
