@@ -4,7 +4,7 @@
 
 # Docker y los contenedores.
 
-Docker es un entorno virtualizado de ejecución de contenedores, agregando un sistema ligero de despliegue y ligero, que lo hace muy cómodo para la computación cloud.
+Docker es un entorno virtualizado de ejecución de contenedores, agregando un sistema ligero de despliegue y una ejecución de las máquinas virtualizadas más ligera que la virtualización clásica, que lo hace muy cómodo para la computación cloud.
 
 ## Qué es un contenedor
 
