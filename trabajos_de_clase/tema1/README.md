@@ -12,7 +12,7 @@ __1. Buscar información sobre las tareas o servicios web para los que se usan m
 [Apache](http://httpd.apache.org/) es un servidor HTTP (`httpd`) para __alojar servicios y páginas web__ desarrollado por la [Apache Software Foundation](http://www.apache.org/) desde 1995. Debido a su gran popularidad, dispone de una buena documentación,además, es extensible mediante módulos y puede procesar un gran número de lenguajes interpretados sin recurrir a software externo.
 
 ## Nginx
-[Nginx](https://www.nginx.com/) es un servidor que soporta aplicaciones HTTP, TCP y UDP. Al igual que _Apache_ es un también un servidor web. Fue desarrollado para soportar una gran carga de peticiones, algo muy reclado en la web actual. 
+[Nginx](https://www.nginx.com/) es un servidor que soporta aplicaciones HTTP, TCP y UDP. Al igual que _Apache_ es un también un servidor web. Fue desarrollado para soportar una gran carga de peticiones, algo muy reclamado en la web actual. 
 
 ### Apache vs Nginx
 En [DigitalOcean](https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations) explican las diferencias que se deben tener en cuenta la hora de escoger entre uno y otro.
