@@ -51,7 +51,7 @@ Docker y su API hay ciertas cosas que no soporta, y en caso de que la API no sop
 
 ![kubernetes](https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png)
 
-Como podemos encontrar en su [página web](kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Además de esto, fue desarrollado por Google y escrito en _Go_. Pero, ¿por qué no usar directamente contenedores Docker? 
+Como podemos encontrar en su [página web](https://kubernetes.io), Kubernetes es un sistema para el despliegue automático de aplicaciones contenerizadas, generalmente mediante Docker. Esto se conoce como el orquestador de contenedores. Además de esto, fue desarrollado por Google y escrito en _Go_. Pero, ¿por qué no usar directamente contenedores Docker? 
 
 1.  Docker no es capaz de ver nada más allá del host que ejecuta el contenedor. 
 2.  Si tenemos varios contenedores, estos no pueden ser vistos como una sola unidad.
