@@ -63,7 +63,7 @@ Para eso viene al rescate Kubernetes.  Aunque antes de empezar con él, debemos 
 
 ![minion](https://c1.staticflickr.com/3/2880/12909509855_0640e249dc_b.jpg)
 
-Los ___Pods___ son la unidad más básica que puede desplegar Kubernetes. Un Pod encapsula un aplicación en un contenedor, capaz de almacenar recursos, tener una dirección IP única y opciones de configuración del contenedor. Estos contenedores suelen ser contenedores _Docker_. Estos contenedores con una aplicación específica se les conoce como los _Kubernetes Nodes_, antes conocidos como _minions_. Existen dos tipos de Pods:
+Los ___Pods___ son la unidad más básica que puede desplegar Kubernetes. Un Pod encapsula un aplicación en un contenedor, capaz de almacenar recursos, tener una dirección IP única y opciones de configuración del contenedor. Estos contenedores suelen ser contenedores _Docker_. Estos contenedores con una aplicación específica, que se asignan a una máquina específica o MV se les conoce como los _Kubernetes Nodes_, antes conocidos como _minions_. Existen dos tipos de Pods:
 
 * __Pods que ejecutan un solo contenedor__: son el caso de uso más común en Kubernetes. En este caso, se puede ver al Pod como una encapsulación del contenedor y de este modo, Kubernetes solo se tiene que encargar de gestionar los Pods.
 
