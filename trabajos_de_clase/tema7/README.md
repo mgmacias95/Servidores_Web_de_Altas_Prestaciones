@@ -1,4 +1,4 @@
-# Ejercicios tema 7
+# Tema 7 - Almacenamiento de datos
 
 __1. ¿Qué tamaño de unidad RAID se obtendrá al configurar un *RAID 0* a partir de dos discos de 100GB y 100GB?__
 
