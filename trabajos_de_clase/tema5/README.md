@@ -48,6 +48,12 @@ Allow from .foo.com
 __2. Revisar los análisis de tráfico que se ofrecen en:__ http://bit.ly/1g0dkKj.
 __Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP.__
 
+En la siguiente imagen vemos el tráfico capturado por _Wireshark_ tras pedir el `index.html` a uno de los servidores apache de las prácticas:
+
+![](wireshark.png)
+
+Para realizar la captura, he filtrado por la IP del servidor (`192.168.1.138`). En la captura, se puede ver cómo se usa en primer lugar el protocolo __ARP__ donde mi ordenador (`192.168.1.137` ) pregunta quién es el ordenador con IP `192.168.1.138`. Una vez identificado, se pasa al ___threeway handshake___ usando el protocolo TCP. Y después, se pasa a servir el `index.html` usando HTTP. Por último, se cierra la conexión usando el flag `FIN` de TCP.
+
 ---
 
 __3. Buscar información sobre características, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.__
