@@ -60,3 +60,10 @@ __Para empezar, podemos comenzar utilizando las clásicas de Linux:__
 
 * `vmstat`: _vmstat_ (_virtual memory statistics_) nos ofrece información sobre los procesos en ejecución, del estado de la memoria, paginación, etc. dependiendo de la opción que introduzcamos. Estas opciones, al igual que antes están disponibles en el man o en https://linux.die.net/man/8/vmstat.
 
+* `netstat`: _netstat_ imprime información sobre conexiones de red, tablas de enrutamiento, estadísticas sobre interfaces de red, etc. Tal y como se indica en [netstat(8)](https://linux.die.net/man/8/netstat), este programa está obsoleto y ha sido reemplado por `ss`; `netstat -r` ha sido reemplazado por `ip route`, `netstat -i`, ha sido reemplazado por `ip -s link` y `netstat -g` ha sido reemplazado por `ip maddr`.
+
+En [Windows](https://docs.microsoft.com/en-us/sql/relational-databases/performance/performance-monitoring-and-tuning-tools#windows-monitoring-tools) tenemos, de forma nativa, dos herramientas de monitorización:
+
+* _Task Manager_: muestra las aplicaciones y procesos que se están ejecutando en el sistema con información tal como el proceso padre o la cantidad de memoria que consumen.
+
+* _Network Monitor Agent_: monitoriza el tráfico de red.
