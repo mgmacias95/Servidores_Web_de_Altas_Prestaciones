@@ -2,11 +2,41 @@
 
 __1. Aplicar con *iptables* una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.__
 
+Para denegar todo el tráfico, tenemos que ejecutar los siguientes comandos:
+
+```
+# iptables -F
+# iptables -P INPUT DROP
+# iptables -P OUTPUT DROP
+# iptables -P FORWARD DROP
+```
+
+Al intentar obtener la página `index.html` que tenemos en el servidor apache, `curl` se quedará intentando conectarse al servidor hasta que expire el tiempo de conexión:
+
+```
+[marta@vaio tema6]$ curl 192.168.1.138
+curl: (7) Failed to connect to 192.168.1.138 port 80: Expiró el tiempo de conexión
+```
+
 __Aplicar con *iptables* una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.__
+
+Para permitir todo el tráfico, ejecutamos el siguiente comando:
+
+```
+# iptables -P INPUT ACCEPT
+# iptables -P OUTPUT ACCEPT
+# iptables -P FORWARD ACCEPT
+```
+
+Al volver a ejecutar el comando `curl`, obtenemos el `index.html` al instante.
 
 ---
 
 __2. Comprobar qué puertos tienen abiertos nuestras máquinas, su estado y qué programa o demonio los ocupa.__
+
+![](nmap.png)
+
+En el caso de uno de los servidores de prácticas, los puertos abiertos son: el 22 con SSH, el 53 con domain, el 80 con HTTP, el 111 con rpcbind, el 443 con HTTPS, el 2049 con NFS y el 3306 con MySQL.
 
 ---
 
