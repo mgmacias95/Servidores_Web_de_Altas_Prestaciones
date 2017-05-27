@@ -80,3 +80,6 @@ En ambos casos, es necesario conocer la IP del cliente, que se encuentra en la [
 
 __7. Buscar información sobre distintos métodos y herramientas para implementar GSLB.__
 
+Una herramienta para implementar GSLB es [Amazon Route 53](https://aws.amazon.com/es/route53/) que está dentro de los servicios de Amazon Web Services, que nos permite realizar un GSLB mediante un sistema global de servidores DNS con _Elastic Load Balancing_.
+
+Otra de las posibles formas de crear un GSLB es usar _Nginx_ y _[Nginx Plus](https://www.nginx.com/resources/glossary/global-server-load-balancing/)_. Además de esto, como podemos ver [aquí](https://www.nginx.com/resources/deployment-guides/global-load-balancing-amazon-route-53-nginx-plus/) como podemos usar Nginx Plus y Amazon Route 53 para hacer un GSLB, junto con la configuración tanto en Amazon como en Nginx.
