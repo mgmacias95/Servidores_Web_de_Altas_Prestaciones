@@ -74,3 +74,78 @@ Finalmente, probamos a añadir el disco de nuevo:
 ![](13.png)
 
 Una vez añadido vemos que se está reconstruyendo y que podemos seguir accediendo al directorio `/dat`.
+
+## Realizar una configuración NFS
+
+Para realizar una configuración NFS, debemos establecer una máquina como la ___máquina host___, que será la que contenga originalmente los archivos, y una ___máquina anfitriona___ que será donde realizaremos la sincronización. Una vez decidido esto, pasaremos a hacer la configuración de la máquina anfitriona.
+
+A continuación, vamos a realizar la configuración de las máquinas, siguiendo este tutorial de [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-14-04).
+
+### Configuración del servidor anfitrión
+
+En esta máquina, lo primero que debemos instalar es el paquete `nfs-kernel-server`, que será el que nos permita compartir nuestros directorios. Para ello, ejecutamos lo siguiente:
+
+```{bash}
+sudo apt install nfs-kernel-server
+```
+
+Al igual que en el tutorial, vamos a compartir dos carpetas con la otra máquina, que serán `/home` y `/var/nfs`. Como ya disponemos de un directorio `/home` en nuestra máquina, crearemos el directorio `/var/nfs`:
+
+```{bash}
+sudo mkdir /var/nfs
+```
+
+Una vez creado el directorio, es conveniente cambiar la propiedad del directorio al usuario `nobody` y asignarle el directorio al grupo `nogroup` para poder compartir el directorio. Sin embargo, esto no debemos hacerlo con el directorio `/home` para evitar problemas con los usuarios de la máquina o servidor _host_. Esta acción la haremos de la siguiente manera:
+
+```{bash}
+sudo chown nobody:nogroup /var/nfs
+```
+
+![](15.png)
+
+Una vez hecho esto, podemos pasar a configurar los ___NFS Exports___ en nuestro servidor _host_. Para ello, debemos abrir el fichero `/etc/exports`.
+
+```{bash}
+sudo nano /etc/exports
+```
+
+En este fichero, debemos añadir qué directorios son los que vamos a compartir, la dirección IP de la máquina con la que queremos compartirlo y las opciones de uso compartido de los distintos directorios. En nuestro caso, podemos ver en la siguiente imagen la configuración que aplicamos a los directorios.
+
+![](14.png)
+
+Las opciones que hemos añadido significan:
+
+* `rw`: el servidor que actúe como cliente, tendrá permisos de escritura y lectura en el directorio.
+* `sync`: esta opción fuerza a NFS a escribir los cambios en disco antes de replicarlos, lo que nos proporciona estabilidad y consistencia en nuestras máquinas.
+* `no_subtree_check`: Esta opción evita que el servidor _host_ compruebe que el fichero sigue existiendo en el directorio compartido para cada petición. Esto evita muchos problemas si a algún usuario se le ocurre renombrar el fichero mientras otro lo tiene abierto en el servidor cliente. En la mayoría de los casos, es lo mejor.
+* `no_root_squash`: en este caso, deshabilitamos que NFS traduzca las peticiones de un usuario _root_ desde una máquina externa a un usuario sin privilegios en el servidor _host_. Esto se hace por seguridad, pero en este caso, como es un ejemplo didáctico, se desactiva.
+
+Una vez terminado de configurar nuestro fichero, tendremos que crear la tabla NFS que refleje los directorios que queremos compartir. Esto se hace introduciendo el siguiente comando:
+
+```{bash}
+sudo exportfs -a
+```
+
+Tras esto, tendremos que iniciar el servicio NFS con la siguiente orden:
+
+```{bash}
+sudo service nfs-kernel-server start
+```
+
+![](16.png)
+
+### Configuración del servidor cliente
+
+Para poder comenzar con la configuración en el lado del servidor cliente, en este caso tenemos que instalar el siguiente paquete:
+
+```{bash}
+sudo apt install nfs-common
+```
+
+Tras tener el paquete instalado, pasaremos a montar los directorios que nuestro servidor anfitrión quiere compartir con nosotros. Para ello, usaremos el directorio `/mnt` como punto de montaje de estos directorios. Además de esto, vamos a crear un nuevo directorio llamado `nfs` para tener mejor localizado nuestros directorios NFS. 
+
+```{bash}
+sudo mkdir -p /mnt/nfs/home /mnt/nfs/var/nfs
+```
+
+![](17.png)
