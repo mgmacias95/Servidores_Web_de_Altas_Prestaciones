@@ -149,3 +149,87 @@ sudo mkdir -p /mnt/nfs/home /mnt/nfs/var/nfs
 ```
 
 ![](17.png)
+
+A continuación, vamos a montar los directorios que está compartiendo el servidor _host_ con el servidor cliente, usando la orden `mount`:
+
+```
+sudo mount $IP_HOST:/home /mnt/nfs/home
+sudo mount $IP_HOST:/var/nfs /mnt/nfs/var/nfs
+```
+
+Una vez montados los directorios, podemos comprobar que se han montado bien, ejecutando una simple orden `ls`. En nuestro caso `IP_HOST` fue 192.168.1.138, así que la orden que introducimos quedó de la siguiente manera:
+
+![](18.png)
+
+Como podemos ver, la orden se ha ejecutado bien, y se han montado de forma correcta los directorios. Pero, existe una forma más elegante de comprobar esto, y es usando la siguiente orden:
+
+```{bash}
+df -h
+```
+
+![](19.png)
+
+En la imagen, en las dos últimas líneas podemos ver cómo el sistema de ficheros montado es el que corresponde al sistema de ficheros del servidor _host_, el tamaño, el espacio usado, el disponible, etc. y dónde está montado el sistema de archivos. Por lo tanto, podemos ver que se han montado de forma correcta.
+
+## Probando el NFS
+
+Una vez configurado y montado el NFS, podemos probar fácilmente que funciona de forma correcta, creando un fichero en los directorios con la orden `touch` en cualquiera de las máquinas.
+
+```
+sudo touch /mnt/nfs/home/archivo_de_prueba_en_home.txt
+```
+
+En este caso, la prueba es para el directorio `/home` desde la máquina cliente y como podemos ver en la siguiente imagen, funciona.
+
+![](20.png)
+
+Lo mismo sucede si lo ejecutamos desde la máquina _host_. 
+
+```
+sudo touch /mnt/nfs/var/nfs/archivo_de_prueba_en_var.txt
+```
+
+![](21.png)
+
+Y al igual que antes, se realiza la sincronización de forma correcta.
+
+## Realizar el montado del NFS de forma automática al inicio
+
+Para no tener que estar ejecutando todos los comandos anteriores cada vez que queramos sincronizar las máquinas, podemos hacer que las máquinas se sincronicen al iniciarlas de la siguiente manera.
+
+Lo primero es abrir el fichero `/etc/fstab`, y añadir al final del fichero las siguientes líneas:
+
+```
+192.168.1.138:/home    /mnt/nfs/home   nfs auto,noatime,nolock,bg,nfsvers=4,intr,tcp,actimeo=1800 0 0
+192.168.1.138:/var/nfs    /mnt/nfs/var/nfs   nfs auto,noatime,nolock,bg,nfsvers=4,sec=krb5p,intr,tcp,actimeo=1800 0 0
+```
+
+Para más opciones de configuración del `fstab`, podemos consultar siempre el _man_, pero, las que aparecen en la línea significan:
+
+* `auto`: detecta y establece de forma automática el sistema de archivos (_ext2_, _ext4_, etc.).
+* `noatime`: se refiere al _File timestamp maintainence_ aunque para sistemas NFS no afecta.
+* `nolock`: a parte de mejorar el rendimiento, es necesario para que, cuando montemos algo en el directorio `/var`, el _Network Lock Manager_ bloqueará algunos archivos. Es por esto, y a que algunos servidores no soportan tampoco NLM, el porqué de no bloquear los archivos al usar NFS.
+* `bg`: el montado se realizará en segundo plano, y en caso de que falle, no mostrará ningún error.
+* `nfsvers`: versión del protocolo de NFS.
+* `sec`: lista de "_security flavors_" que se usarán para acceder a un archivo.
+* `intr`: se usa para la compatibilidad, aunque a paritr del kernel 2.6.25 se ignora.
+* `tcp`: _sugar sintax_ para establecer directamente que se use el protocolo _tcp_.
+* `actimeo`: tiempo que espera NFS para pedir al servidor información sobre los archivos.
+
+![](22.png)
+
+
+## Desmontar un sistema NFS
+
+Para realizar esta acción en nuestra máquina cliente, es tan sencillo como invocar a la orden `umount`:
+
+```{bash}
+sudo umount /mnt/nfs/home
+sudo umount /mnt/nfs/var/nfs
+# O para desmontarlo todo en una sola orden
+sudo umount -R /mnt/nfs/
+```
+
+Tras desmontarlo, podemos volver a ejecutar el comando `df -h` para ver los sistemas de archivos que hay montados en la máquina cliente, tal y como se ve en la siguiente imagen.
+
+![](23.png)
