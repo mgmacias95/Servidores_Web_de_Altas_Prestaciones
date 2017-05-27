@@ -53,3 +53,24 @@ Para comprobar que el proceso ha ido correctamente, reiniciamos el sistema y eje
 ![](10.png)
 
 El disco se ha montado automáticamente, pero ahora con el nombre `/dev/md127`.
+
+## Simulando fallo en uno de los discos
+Finalmente, vamos a comprobar que aunque falle uno de los discos podemos seguir accediendo a la carpeta `/dat`.
+
+En primer lugar, simulamos un fallo en uno de los discos:
+
+![](11.png)
+
+En la información sobre el estado del RAID, podemos ver cómo hay un disco caído y, además, incluso podemos saber cuál es (/dev/sdb).
+
+Ahora, como sabemos cuál es el que ha fallado vamos a retirarlo en caliente:
+
+![](12.png)
+
+Al retirarlo, podemos seguir accediendo al directorio `/dat`.
+
+Finalmente, probamos a añadir el disco de nuevo:
+
+![](13.png)
+
+Una vez añadido vemos que se está reconstruyendo y que podemos seguir accediendo al directorio `/dat`.
