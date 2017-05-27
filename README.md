@@ -1,4 +1,4 @@
-# Servidores_Web_de_Altas_Prestaciones
+# Servidores Web de Altas Prestaciones
 Repositorio dedicado al trabajo realizado en la asignatura Servidores Web de Altas Prestaciones - Grado en Ingeniería Informática (UGR)
 
 ## Autores
