@@ -1,4 +1,4 @@
-# Ejercicios Tema 6 
+# Tema 6 - Asegurar el sistema web
 
 __1. Aplicar con *iptables* una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.__
 
